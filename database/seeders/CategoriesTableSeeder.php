@@ -79,6 +79,16 @@ class CategoriesTableSeeder extends Seeder
                 'created_at' => '2023-08-30 23:13:51',
                 'updated_at' => '2023-08-30 23:13:51',
             ),
+            6 => 
+            array (
+                'id' => 7,
+                'title' => 'Lainnya',
+                'slug' => 'lainnya',
+                'keywords' => 'Lainnya',
+                'meta_desc' => 'Lainnya',
+                'created_at' => '2023-08-31 19:35:22',
+                'updated_at' => '2023-08-31 19:35:22',
+            ),
         ));
         
         
