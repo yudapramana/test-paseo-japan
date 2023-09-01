@@ -60,12 +60,14 @@
                                     <p>
                                         <a class="btn btn-default animation animated fadeInUp" href="#"
                                             data-animation="fadeInUp" data-animation-delay="1.8s"
-                                            style="animation-delay: 1.8s; opacity: 1;">Selamat Datang</a>
+                                            style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
+                                            data-target="#myModal">Daftarkan Permohonan
+                                            Informasi</a>
                                     </p>
                                     <a class="btn btn-outline-white animation animated fadeInUp" href="#"
                                         data-animation="fadeInUp" data-animation-delay="1.8s"
-                                        style="animation-delay: 1.8s; opacity: 1;">Pejabat Pengelola Informasi dan
-                                        Dokumentasi</a>
+                                        style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
+                                        data-target="#surveiModal">Survey Kepuasan Masyarakat</a>
                                 </div>
                             </div>
                         </div>
@@ -83,6 +85,53 @@
                 class="ion-chevron-right"></i></a>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="letter-spacing: 1px; font-size:x-large; font-weight:bolder">
+                Halaman Konfirmasi Permohonan Informasi
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p align="center" class="pt-5">
+                    &ensp;<b>PERHATIAN!!!</b><br>
+                    Apakah Anda yakin ingin mendaftarkan permohonan informasi secara online?
+                </p>
+                <center class="pb-5">
+                    <div class="hero-btns">
+                        <a class="btn btn-default" href="/sect/permohonan_informasi">Ya, saya ingin mendaftar
+                            online</a>&nbsp;
+                        <a class="btn btn-customed-line" href="/sect/panduan_manual">Tidak, saya ingin mendaftar
+                            manual</a>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Survei -->
+<div class="modal fade" id="surveiModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" style="letter-spacing: 1px; font-size:x-large; font-weight:bolder">
+                Bagian Survey Kepuasan Masyarakat
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p align="center">
+                    <a href="https://sikm.kemenagpessel.com/isi-survey" target="_blank"><img
+                            src="{{ asset('/assets/images/survei.jpeg') }}" style="max-width: 80%;
+                        height: auto;"></a>
+                </p><br />
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- END SECTION BANNER -->
 
 <!-- START SECTION BANNER -->
@@ -283,7 +332,7 @@
                     <div class="icon_box_content">
                         <h4 class="font-weight-bolder">INFORMASI BERKALA</h4>
                         <p>Merupakan informasi yang wajib disediakan dan diumumkan secara berkala.</p>
-                        <a href="#" class="btn btn-outline-white btn-sm">Selengkapnya</a>
+                        <a href="info/informasi_berkala" class="btn btn-outline-white btn-sm">Selengkapnya</a>
 
                     </div>
                 </div>
@@ -295,7 +344,7 @@
                     <div class="icon_box_content">
                         <h4 class="font-weight-bolder">INFORMASI SERTA MERTA</h4>
                         <p>Informasi yang berkaitan dengan hajat hidup orang banyak dan ketertiban umum</p>
-                        <a href="#" class="btn btn-outline-white btn-sm">Selengkapnya</a>
+                        <a href="info/informasi_serta_merta" class="btn btn-outline-white btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -306,7 +355,7 @@
                     <div class="icon_box_content">
                         <h4 class="font-weight-bolder">INFORMASI SETIAP SAAT</h4>
                         <p>Informasi yang disediakan oleh Badan Publik dan siap tersedia langsung</p>
-                        <a href="#" class="btn btn-outline-white btn-sm">Selengkapnya</a>
+                        <a href="info/informasi_setiap_saat" class="btn btn-outline-white btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -317,7 +366,7 @@
                     <div class="icon_box_content">
                         <h4 class="font-weight-bolder">INFORMASI DIKECUALIKAN</h4>
                         <p>informasi yang tidak dapat diakses oleh pemohon informasi publik </p>
-                        <a href="#" class="btn btn-outline-white btn-sm">Selengkapnya</a>
+                        <a href="info/informasi_dikecualikan" class="btn btn-outline-white btn-sm">Selengkapnya</a>
                     </div>
                 </div>
             </div>

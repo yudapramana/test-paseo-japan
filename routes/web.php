@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\RefDataSubKlasifikasi;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
@@ -288,3 +289,14 @@ Route::get('/info/{sect}', [\App\Http\Controllers\HomeController::class, 'info']
 
 Route::get('/data/detail/{idx}', [\App\Http\Controllers\Landing\PostController::class, 'index'])->name('data.index');
 Route::get('/data/download/{idx}', [\App\Http\Controllers\Landing\PostController::class, 'download'])->name('data.download');
+
+
+
+Route::put('/kategori/add', [\App\Http\Controllers\MasterController::class, 'addKategori'])->name('kategori.add');
+Route::put('/instansi/add', [\App\Http\Controllers\MasterController::class, 'addInstansi'])->name('instansi.add');
+
+
+Route::get('/subklasifikasi', function () {
+    $subklasifikasi = RefDataSubKlasifikasi::all();
+    return $subklasifikasi;
+});

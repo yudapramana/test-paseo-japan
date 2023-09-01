@@ -12,6 +12,13 @@
 <script src="{{asset('assets/js/filepond/filepond.js')}}"></script>
 
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    
     const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success px-3 mx-3'
@@ -107,12 +114,12 @@
                 },
                 cache: true
             },
-            placeholder: 'Cari Item Syarat Layanan',
+            placeholder: 'Cari Item Kategori',
             minimumInputLength: 5,
             "language": {
                 "noResults": function(res, data) {
                     // console.log(res, data);
-                    return "Tidak ditemukan <a class='btn btn-sm btn-danger add-new-syarat'>Tambahkan</a>";
+                    return "Tidak ditemukan <a class='btn btn-sm btn-danger add-new-kategori'>Tambahkan</a>";
                 }
             },
             escapeMarkup: function(markup) {
@@ -147,12 +154,12 @@
                 },
                 cache: true
             },
-            placeholder: 'Cari Item Syarat Layanan',
+            placeholder: 'Cari Data Instansi / Seksi',
             minimumInputLength: 5,
             "language": {
                 "noResults": function(res, data) {
                     // console.log(res, data);
-                    return "Tidak ditemukan <a class='btn btn-sm btn-danger add-new-syarat'>Tambahkan</a>";
+                    return "Tidak ditemukan <a class='btn btn-sm btn-danger add-new-instansi'>Tambahkan</a>";
                 }
             },
             escapeMarkup: function(markup) {
@@ -161,6 +168,149 @@
                 return markup;
             }
         });
+
+    $(document).on('click', '.add-new-kategori', function(e) {
+        console.log('add new kategori clicked');
+        var kategoriName = $('.select2-search__field').val();
+        console.log('data');
+        console.log(kategoriName);
+        $('#id_data_kategori').select2('close');
+        $('#defForm').block({
+            message: `Loading...`
+        });
+
+        $.ajax({
+            type: 'PUT',
+            url: `/kategori/add`,
+            data: {
+                kategori_name: kategoriName
+            },
+            dataType: 'json', // let's set the expected response format
+            success: function(data) {
+                console.log(data);
+                if (!data.success) {
+                    Swal.fire(
+                        'Error!', data.message, 'error'
+                    );
+                } else {
+                    
+
+                    setTimeout(function() {
+                    // $("#mySelect2").select2('data', { id:"elementID", text: "Hello!"});
+                    var dataKategori = data.data;
+                    console.log('dataKategori');
+                    console.log(dataKategori);
+                    $("#id_data_kategori").select2('data', { id:dataKategori.id_data_kategori, text: dataKategori.name});
+                    
+                    console.log('dataKategori.id_data_kategori');
+                    console.log(dataKategori.id_data_kategori);
+                    $('#id_data_kategori').val(dataKategori.id_data_kategori).trigger("change");
+                    console.log('trigger change done');
+                    $('#defForm').unblock();
+
+                }, 2000);
+
+
+
+                }
+
+            },
+            error: function(err) {
+                if (err.status ==
+                    422) { // when status code is 422, it's a validation issue
+                    console.log(err.responseJSON);
+                    // you can loop through the errors object and show it to the user
+                    console.warn(err.responseJSON.errors);
+                    // display errors on each form field
+                    $('.ajax-invalid').remove();
+                    $.each(err.responseJSON.errors, function(i, error) {
+                        var el = $(document).find('[name="' + i + '"]');
+                        el.after($('<span class="ajax-invalid" style="color: red;">' +
+                            error[0] + '</span>'));
+                    });
+                } else if (err.status == 403) {
+                    Swal.fire(
+                        'Unauthorized!',
+                        'You are unauthorized to do the action',
+                        'warning'
+                    );
+
+                }
+            }
+        });
+    });
+
+
+    $(document).on('click', '.add-new-instansi', function(e) {
+        console.log('add new instansi clicked');
+        var instansiName = $('.select2-search__field').val();
+        console.log('data');
+        console.log(instansiName);
+        $('#id_data_instansi').select2('close');
+        $('#defForm').block({
+            message: `Loading...`
+        });
+
+        $.ajax({
+            type: 'PUT',
+            url: `/instansi/add`,
+            data: {
+                instansi_name: instansiName
+            },
+            dataType: 'json', // let's set the expected response format
+            success: function(data) {
+                setTimeout(function() {
+                    console.log(data);
+                    if (!data.success) {
+                    Swal.fire(
+                        'Error!', data.message, 'error'
+                    );
+                } else {
+                    setTimeout(function() {
+                        // $("#mySelect2").select2('data', { id:"elementID", text: "Hello!"});
+                        var dataInstansi = data.data;
+                        console.log('dataInstansi');
+                        console.log(dataInstansi);
+                        $("#id_data_instansi").select2('data', { id:dataInstansi.id_data_instansi, text: dataInstansi.name});
+                        
+                        console.log('dataInstansi.id_data_instansi');
+                        console.log(dataInstansi.id_data_instansi);
+                        $('#id_data_instansi').val(dataInstansi.id_data_instansi).trigger("change");
+                        console.log('trigger change done');
+                        $('#defForm').unblock();
+
+                    }, 2000);
+
+
+
+                    }
+                }, 100);
+
+            },
+            error: function(err) {
+                if (err.status ==
+                    422) { // when status code is 422, it's a validation issue
+                    console.log(err.responseJSON);
+                    // you can loop through the errors object and show it to the user
+                    console.warn(err.responseJSON.errors);
+                    // display errors on each form field
+                    $('.ajax-invalid').remove();
+                    $.each(err.responseJSON.errors, function(i, error) {
+                        var el = $(document).find('[name="' + i + '"]');
+                        el.after($('<span class="ajax-invalid" style="color: red;">' +
+                            error[0] + '</span>'));
+                    });
+                } else if (err.status == 403) {
+                    Swal.fire(
+                        'Unauthorized!',
+                        'You are unauthorized to do the action',
+                        'warning'
+                    );
+
+                }
+            }
+        });
+    });
 
         // Initiate Table
         var defTbl = $("#defTbl").DataTable({
@@ -386,6 +536,9 @@
             $('#id_data_klasifikasi').val(data.id_data_klasifikasi).trigger("change");
             $('#id_data_sub_klasifikasi').val(data.id_data_sub_klasifikasi).trigger("change");
             $('#id_data_kategori').val(data.id_data_kategori).trigger("change");
+            console.log('data.id_data_kategori');
+            console.log(data.id_data_kategori);
+
             $('#id_data_instansi').val(data.id_data_instansi).trigger("change");
 
             $('#nama_file').val(data.nama_file);
@@ -792,5 +945,9 @@
 
 
     });
+
+</script>
+
+<script>
 
 </script>
