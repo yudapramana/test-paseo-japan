@@ -66,7 +66,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Daftar Gallery</h5>
+                        <h5 class="card-title">Daftar Data</h5>
 
                         <table id="defTbl" class="table table-bordered dataTable dtr-inline"
                             style="width:100% !important; font-size:small !important;">
