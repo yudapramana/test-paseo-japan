@@ -261,14 +261,15 @@
                             <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
                         </ol>
                         <div class="carousel-inner">
-                            @foreach($recent_posts as $key => $post)
+                            @foreach($activities as $key => $act)
 
                             <div class="carousel-item  @if($key == 0) active @endif">
-                                <img src="{{$post->cover_small}}" class="d-block w-100" alt="...">
+                                <img src="{{$act->square_cover_image}}" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <small style="color:#ffffff;">{{ $post->created_at->format('d F Y') }}</small><br>
+                                    <small style="color:#ffffff;">{{ \Carbon\Carbon::parse($act->date)->format('d F Y')
+                                        }}</small><br>
                                     <a style="color:#ffffff;"
-                                        href="/post/{{$post->slug}}">{{\Illuminate\Support\Str::limit($post->title, 100,
+                                        href="/act/{{$act->slug}}">{{\Illuminate\Support\Str::limit($act->name, 100,
                                         $end='...')}}&nbsp;</a>
 
                                 </div>

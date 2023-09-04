@@ -51,14 +51,14 @@
                     </a>
                 </li>
                 @endcan
-                {{-- @can('page-information-products')
+                @can('page-information-products')
                 <li>
-                    <a href="/information/products" class="@if (request()->segment(2) == 'products') active @endif">
-                        <i class=" bi bi-circle"></i><span>Products</span>
+                    <a href="/information/activities" class="@if (request()->segment(2) == 'activities') active @endif">
+                        <i class=" bi bi-circle"></i><span>Activities</span>
                     </a>
                 </li>
                 @endcan
-                @can('page-information-galleries')
+                {{-- @can('page-information-galleries')
                 <li>
                     <a href="/information/galleries" class="@if (request()->segment(2) == 'galleries') active @endif">
                         <i class=" bi bi-circle"></i><span>Galleries</span>

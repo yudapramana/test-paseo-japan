@@ -199,6 +199,9 @@ Route::post('/information/services/store', [\App\Http\Controllers\Admin\Services
 Route::get('/information/products', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('products.index');
 Route::post('/information/products/store', [\App\Http\Controllers\Admin\ProductController::class, 'store']);
 
+Route::get('/information/activities', [\App\Http\Controllers\Admin\ActivityController::class, 'index'])->name('activities.index');
+Route::post('/information/activities/store', [\App\Http\Controllers\Admin\ActivityController::class, 'store']);
+
 Route::get('/information/galleries', [\App\Http\Controllers\Admin\GalleryController::class, 'index'])->name('galleries.index');
 Route::post('/information/galleries/store', [\App\Http\Controllers\Admin\GalleryController::class, 'store']);
 

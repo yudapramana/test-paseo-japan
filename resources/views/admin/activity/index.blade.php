@@ -46,15 +46,15 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Daftar Produk</h5>
+                        <h5 class="card-title">Daftar Kegiatan</h5>
 
                         <table class='table table-bordered display' id="example"
                             style="width:100%; font-size:11pt!important;">
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Tanggal</th>
                                     <th>Nama - Deskripsi</th>
-                                    <th>Layanan</th>
                                     <th>Cover</th>
                                     <th width="10%">Aksi</th>
                                 </tr>
@@ -67,7 +67,7 @@
         </div>
     </section>
 
-    @include('admin.products._modal')
+    @include('admin.activity._modal')
 
 
 </main>
@@ -237,12 +237,11 @@
             , name: 'DT_RowIndex'
             , className: 'text-center'
         }, {
+            data: 'date'
+            , name: 'date'
+        }, {
             data: 'name-description'
             , name: 'name-description'
-        , }, {
-            data: 'service.name'
-            , name: 'service.name'
-            , className: 'text-center align-middle'
         }, {
             data: 'cover'
             , name: 'cover'
@@ -256,7 +255,7 @@
 
 
     $(document).ready(function() {
-        table.ajax.url('/information/products').load();
+        table.ajax.url('/information/activities').load();
         console.log('mana neeee');
 
         table.buttons().container()
@@ -271,7 +270,7 @@
         $(document).on("click", "#addBtn", function() {
             var title = $(this).data('title');
             $("#judul-modal").html(title);
-            $("#id_product").val('');
+            $("#id_activity").val('');
             $('#nama').prop('disabled', false);
             $('#deskripsi').prop('disabled', false);
             $('#tipe').prop('disabled', false);
@@ -304,7 +303,7 @@
             $("#judul-modal").html('Edit Data Group');
             var data = table.row($(this).parents('tr')).data();
             console.log(data);
-            $("#id_product").val(data.id_product);
+            $("#id_activity").val(data.id_activity);
 
             $('#nama').val(data.name);
             $('#title_id').val(data.title_id);

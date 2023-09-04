@@ -19,7 +19,10 @@ class HomeController extends Controller
     {
         $services = \App\Models\Services::where('featured', 'yes')->get();
         $carousels = \App\Models\Carousel::where('active', 'yes')->get();
+
         $recent_posts = \App\Models\Post::where('is_news', 'yes')->orderBy('created_at', 'DESC')->take(3)->get();
+        $activities = \App\Models\Activity::orderBy('created_at', 'DESC')->take(3)->get();
+
         return view('landing.v2.home', [
             'title' => 'PPID - Kementerian Agama Kab. Pesisir Selatan',
             'accountfb' => 'pandanviewmandeh',
@@ -27,7 +30,9 @@ class HomeController extends Controller
             'channel' =>  '@pandanviewmandehofficial4919',
             'services' =>  $services,
             'carousels' =>  $carousels,
-            'recent_posts' => $recent_posts
+            'recent_posts' => $recent_posts,
+            'activities' => $activities
+
         ]);
     }
 
