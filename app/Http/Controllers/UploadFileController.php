@@ -32,7 +32,9 @@ class UploadFileController extends Controller
     public function destroy(Request $request, $id)
     {
         $folder = $request->getContent();
-        $this->rmdir_recursive(storage_path('app/public/data_file/tmp/' . $folder));
+        // $this->rmdir_recursive(storage_path('app/public/data_file/tmp/' . $folder));
+        $this->rmdir_recursive(storage_path('app/data_file/tmp/' . $folder));
+
 
         $tempFile = TemporaryFile::where('folder', $folder)->first();
         if ($tempFile) {
