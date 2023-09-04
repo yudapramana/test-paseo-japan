@@ -181,7 +181,7 @@ return [
         // Spatie\Permission\PermissionServiceProvider::class,
         // OwenIt\Auditing\AuditingServiceProvider::class,
 
-        Mews\Captcha\CaptchaServiceProvider::class,
+        // Mews\Captcha\CaptchaServiceProvider::class,
     ],
 
     /*
