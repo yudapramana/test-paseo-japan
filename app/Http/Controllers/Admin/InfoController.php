@@ -144,13 +144,13 @@ class InfoController extends Controller
                     $tempFile = TemporaryFile::where('folder', $request->data_file)->first();
     
                     if ($tempFile) {
-                        $url = storage_path('app/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
+                        $url = storage_path('app/public/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
                         $ext = pathinfo($url, PATHINFO_EXTENSION);
                         $itemFile->addMedia($url)
                                     ->usingName($request->nama_file)
                                     ->usingFileName($request->nama_file . '.' . $ext)
                                     ->toMediaCollection('data_file');
-                        rmdir(storage_path('app/data_file/tmp/' . $tempFile->folder));
+                        rmdir(storage_path('app/public/data_file/tmp/' . $tempFile->folder));
                         $tempFile->delete();
         
                         $mediaFile = $itemFile->getMedia('data_file');
@@ -201,13 +201,13 @@ class InfoController extends Controller
                 $tempFile = TemporaryFile::where('folder', $request->data_file)->first();
     
                 if ($tempFile) {
-                    $url = storage_path('app/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
+                    $url = storage_path('app/public/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
                     $ext = pathinfo($url, PATHINFO_EXTENSION);
                     $itemFile->addMedia($url)
                                 ->usingName($request->nama_file)
                                 ->usingFileName($request->nama_file . '.' . $ext)
                                 ->toMediaCollection('data_file');
-                    rmdir(storage_path('app/data_file/tmp/' . $tempFile->folder));
+                    rmdir(storage_path('app/public/data_file/tmp/' . $tempFile->folder));
                     $tempFile->delete();
     
                     $mediaFile = $itemFile->getMedia('data_file');
@@ -222,13 +222,13 @@ class InfoController extends Controller
                 $tempFile = TemporaryFile::where('folder', $request->data_file)->first();
     
                 if ($tempFile) {
-                    $url = storage_path('app/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
+                    $url = storage_path('app/public/data_file/tmp/' . $tempFile->folder . '/' . $tempFile->filename);
                     $ext = pathinfo($url, PATHINFO_EXTENSION);
                     $itemFile->addMedia($url)
                                 ->usingName($request->nama_file)
                                 ->usingFileName($request->nama_file . '.' . $ext)
                                 ->toMediaCollection('data_file');
-                    rmdir(storage_path('app/data_file/tmp/' . $tempFile->folder));
+                    rmdir(storage_path('app/public/data_file/tmp/' . $tempFile->folder));
                     $tempFile->delete();
     
                     $mediaFile = $itemFile->getMedia('data_file');
