@@ -41,5 +41,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RefDataKategoriTableSeeder::class);
         $this->call(RefDataClassificationSeeder::class);
         $this->call(ActivitiesTableSeeder::class);
+        $this->call(DaftarPermohonanTableSeeder::class);
     }
 }

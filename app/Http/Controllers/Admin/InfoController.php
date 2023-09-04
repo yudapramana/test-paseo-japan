@@ -48,15 +48,6 @@ class InfoController extends Controller
                 return $str;
             })
             ->addColumn('datastatus', function ($item) {
-
-
-                // return '<span class="badge badge-'. $item->status == 'draft' ? 'danger' : 'success'  .'">' . $item->status .'</span>';
-
-                // if ($item->status == 'draft') {
-                //     return '<span class="badge badge-danger">'. $item->status .'</span>';
-                // } else {
-                //     return '<span class="badge badge-success">'. $item->status .'</span>';
-                // }
                 $now = $item->status;
                 $notNow = $item->status == 'draft' ? 'publish' : 'draft';
                 $nowColor = $item->status == 'draft' ? 'danger' : 'success';

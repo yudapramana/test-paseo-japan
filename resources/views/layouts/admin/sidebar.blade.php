@@ -32,6 +32,13 @@
                 <span>Data & Informasi</span> </a>
         </li>
 
+        <li class="nav-item"> <a class="nav-link @if (request()->segment(1) == 'permohonan') @else collapsed @endif"
+                href="/permohonan">
+                <i class="bi bi-clipboard"></i>
+
+                <span>Permohonan</span> </a>
+        </li>
+
         <li class="nav-heading">Kelola Web</li>
 
         @can('menu-information')

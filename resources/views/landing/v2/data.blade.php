@@ -69,9 +69,15 @@
                                 </li>
                             </ul>
 
+                            @if($dataFile->akses == 'public')
                             <button type="submit" class="btn btn-sm btn-primary">
                                 <span id="download"> Download</span>
                             </button>
+                            @elseif($dataFile->akses == 'private')
+                            Data Dikecualikan / Rahasia
+                            @else
+                            Silahkan Login untuk melihat Data
+                            @endif
 
                         </div>
                     </div>
@@ -168,17 +174,30 @@
                                     </div>
                                     <div class="card">
                                         <div class="card-header" id="headingThree">
-                                            <h6 class="mb-0"> <a class="collapsed" data-toggle="collapse"
-                                                    href="#collapseFour" aria-expanded="false"
-                                                    aria-controls="collapseFour">Download File</a> </h6>
+                                            <h6 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseFour"
+                                                    aria-expanded="false" aria-controls="collapseFour">Download File</a>
+
+
+                                            </h6>
                                         </div>
                                         <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
                                             data-parent="#accordion">
                                             <div class="card-body">
+
+                                                @if($dataFile->akses == 'public')
                                                 <a href="/data/download/{{ $dataFile->id_data_file_encrypt }}"
                                                     class="btn btn-xs btn-primary">
                                                     Download
                                                 </a>
+                                                @elseif($dataFile->akses == 'private')
+                                                Data Dikecualikan / Rahasia
+                                                @else
+                                                Silahkan Login untuk melihat Data
+                                                @endif
+
+
+
                                             </div>
                                         </div>
                                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permohonan;
 use App\Models\RefDataInstansi;
 use App\Models\RefDataKlasifikasi;
 use App\Models\TrxDataFile;
@@ -23,6 +24,8 @@ class HomeController extends Controller
         $recent_posts = \App\Models\Post::where('is_news', 'yes')->orderBy('created_at', 'DESC')->take(3)->get();
         $activities = \App\Models\Activity::orderBy('created_at', 'DESC')->take(3)->get();
 
+        $totalpermohonanselesai = Permohonan::count();
+
         return view('landing.v2.home', [
             'title' => 'PPID - Kementerian Agama Kab. Pesisir Selatan',
             'accountfb' => 'pandanviewmandeh',
@@ -31,8 +34,8 @@ class HomeController extends Controller
             'services' =>  $services,
             'carousels' =>  $carousels,
             'recent_posts' => $recent_posts,
-            'activities' => $activities
-
+            'activities' => $activities,
+            'totalpermohonanselesai' => $totalpermohonanselesai
         ]);
     }
 

@@ -16,6 +16,16 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('permohonan', [App\Http\Controllers\PermohonanController::class, 'index'])->name('permohonan.index');
+Route::post('permohonan/switch', [App\Http\Controllers\PermohonanController::class, 'switchStatus'])->name('permohonan.status.switch');
+
+
+Route::get('sect/permohonan_informasi', [App\Http\Controllers\SectController::class, 'permohonan'])->name('sect.permohonan');
+Route::post('sect/permohonan/store', [App\Http\Controllers\SectController::class, 'storePermohonan'])->name('permohonan.store');
+
+Route::post('/captcha-validation', [\App\Http\Controllers\CaptchaServiceController::class, 'capthcaFormValidate']);
+Route::get('/reload-captcha', [\App\Http\Controllers\CaptchaServiceController::class, 'reloadCaptcha'])->name('reload.captcha');
+
 Route::post('image-upload', [App\Http\Controllers\ImageUploadController::class, 'storeImage'])->name('image.upload');
 
 Route::get('/migrate-fresh', function () {

@@ -26,6 +26,14 @@
     }
 
 
+    .greenext {
+        color: #29b477;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+
+
     section {
         padding: 30px 0;
     }
@@ -426,6 +434,74 @@
     </div>
 </section>
 <!-- END SECTION BLOG -->
+
+
+<section id="contact-us" class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-lg-6">
+                <h4 class="greenext">Survei Kepuasan Masyarakat</h4>
+                <div class="hero-btns">
+                    {{-- <a data-scroll="" data-toggle="modal" data-target="#surveiModal">Survei Kepuasan Masyarakat</a>
+                    --}}
+
+                    <a class="btn btn-default animation animated fadeInUp" href="#" data-animation="fadeInUp"
+                        data-animation-delay="1.8s" style="animation-delay: 1.8s; opacity: 1;" data-scroll
+                        data-toggle="modal" data-target="#surveiModal">Survei Kepuasan Masyarakat</a>
+                </div><br>
+                <div class="modal fade" id="surveiModal" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <p align="center">
+                                    <a href="https://sikm.kemenagpessel.com/isi-survey"><img
+                                            src="images/survei.jpg"></a>
+                                </p><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-lg-6">
+                <h4 class="greenext">Jumlah Permohonan Informasi Publik</h4>
+                <a href="#">
+                    <h1>{{$totalpermohonanselesai}}</h1>
+                </a>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-12">
+
+                <table border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a style="color:#000000;" href="https://www.facebook.com/KementerianAgamaRI"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/fb.png" width="20px"> Kementerian
+                                    Agama RI</a> 
+                                <a style="color:#000000;" href="https://twitter.com/Kemenag_RI"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/twitter.png"
+                                        width="20px"> @Kemenag_RI</a> 
+                                <a style="color:#000000;" href="https://www.instagram.com/kemenag_ri/"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/ig.png" width="20px"> @kemenag_ri</a> 
+                                <a style="color:#000000;" href="https://ppid.kemenag.go.id/v4/images/yt.png"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/yt.png" width="20px"> Kemenag RI</a> 
+                                <a style="color:#000000;" href="https://www.tiktok.com/@kemenag_ri"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/tiktok.png"
+                                        width="20px"> @kemenag_ri</a> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 
 @endsection

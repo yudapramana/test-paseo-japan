@@ -22,7 +22,7 @@ class RolesTableSeeder extends Seeder
         $staff = Role::create(['name' => 'staff']);
 
         // Super Admin
-        $user = User::where('username', 'superadministrator')->first();
+        $user = User::where('username', 'yudapramana')->first();
         $user->assignRole('super_administrator');
 
         // Owner

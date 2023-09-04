@@ -181,7 +181,7 @@ return [
         // Spatie\Permission\PermissionServiceProvider::class,
         // OwenIt\Auditing\AuditingServiceProvider::class,
 
-
+        Mews\Captcha\CaptchaServiceProvider::class,
     ],
 
     /*
@@ -237,6 +237,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Visitor' => Shetabit\Visitor\Facade\Visitor::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
 
     ],
