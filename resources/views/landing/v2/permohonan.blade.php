@@ -95,13 +95,15 @@
                                 <option value="ktp">KTP</option>
                                 <option value="surat kuasa">Surat Kuasa</option>
                                 <option value="badan hukum">Badan Hukum</option>
+                                <option value="instansi">Instansi</option>
+
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="nomor_identitas">Nomor Identitas</label>
+                            <label for="nomor_identitas">Nomor Identitas / Nama Instansi</label>
                             <input type="text" class="form-control" id="nomor_identitas" name="nomor_identitas"
-                                aria-describedby="nomor_identitas" placeholder="Nomor Identitas">
+                                aria-describedby="nomor_identitas" placeholder="Nomor Identitas / Nama Instansi">
                             {{-- <small id="nomor_identitas" class="form-text text-muted">Kami tidak akan pernah
                                 membagikan Identitas Anda kepada orang lain.</small> --}}
                         </div>
