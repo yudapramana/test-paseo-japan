@@ -1,6 +1,6 @@
 @extends('layouts.landing.v2.master')
 
-@section('title', 'PPID KemenagPessel - Contact')
+@section('title', 'PPID - Buat Permohonan')
 
 @section('_styles')
 
