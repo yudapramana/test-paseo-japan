@@ -234,7 +234,7 @@
                             ${item.keterangan}
                             </>
                             </td>
-                        <td class="text-center" style="color:grey">${item.klasifikasi.name}  <br> <hr> ${item.subklasifikasi.name}</td>
+                        <td class="text-center" style="color:grey">${item.klasifikasi.name} <hr> ${item.subklasifikasi.name}</td>
                         <td class="text-center" style="color:grey">${item.tahun}/${item.tempat == null ? '-' : item.tempat}</td>
                         <td class="text-center" style="color:grey">${item.penanggung_jawab == null ? '-' : item.penanggung_jawab} <br> ${item.instansi.name}</td>
                         <td class="text-center" style="color:grey">
