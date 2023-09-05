@@ -144,12 +144,14 @@ Route::group(['middleware' => ['web']], function () {
             $posts = \App\Models\Post::orderBy('created_at', 'DESC')->paginate(4);
         }
 
+        $posts->appends(request()->input())->links();
+
+
         $categories = \App\Models\Category::withCount('posts')->get();
         $tags = \App\Models\Tag::all();
+        $recent_posts = \App\Models\Post::where('is_news', 'yes')->take(3)->get();
 
-        $recent_posts = \App\Models\Post::orderBy('created_at', 'DESC')->take(5)->get();
-
-        return view('landing.blog', [
+        return view('landing.v2.blog', [
             'title' => 'Blog Pandan View Mandeh',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',

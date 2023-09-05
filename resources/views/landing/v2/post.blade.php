@@ -1,7 +1,6 @@
 @extends('layouts.landing.v2.master')
 @section('title', 'PPID - ' . $post->title)
 
-
 @section('_styles')
 
 <!-- Primary Meta Tags -->
