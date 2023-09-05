@@ -37,9 +37,19 @@ class InfoController extends Controller
                 return $item->instansi->name . ' / ' . $item->penanggung_jawab;
             })
             ->addColumn('fileketerangan', function ($item) {
+
+                $colors = [
+                    'public' => 'primary',
+                    'private' => 'secondary',
+                    'user' => 'success',
+                    'cetak' => 'info',
+                    'online' => 'dark',
+                    'rekam' => 'danger',
+                ];
+
                 return
-                '<span  class="badge bg-dark">' . $item->bentuk . '</span>&nbsp;' .
-                '<span  class="badge bg-primary">' . $item->akses . '</span>' .
+                '<span  class="badge bg-'.$colors[$item->bentuk].'">' . $item->bentuk . '</span>&nbsp;' .
+                '<span  class="badge bg-'.$colors[$item->akses].'">' . $item->akses . '</span>' .
                 '<br><u><a target="_blank" href="'.$item->url_file.'">' .$item->nama_file . '.' . $item->ext .'</a></u>' .
                 '<br>' . $item->keterangan;
             })
