@@ -70,9 +70,10 @@
                             </ul>
 
                             @if($dataFile->akses == 'public')
-                            <button type="submit" class="btn btn-sm btn-primary">
-                                <span id="download"> Download</span>
-                            </button>
+                            <a href="/data/download/{{ $dataFile->id_data_file_encrypt }}"
+                                class="btn btn-xs btn-primary">
+                                Download
+                            </a>
                             @elseif($dataFile->akses == 'private')
                             Data Dikecualikan / Rahasia
                             @else
