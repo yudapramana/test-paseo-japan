@@ -20,6 +20,9 @@ class RefDataKategoriTableSeeder extends Seeder
                 'name'          => 'Tidak Terkategori'
             ],
             [
+                'name'          => 'Laporan'
+            ],
+            [
                 'name'          => 'Urutan Kepegawaian'
             ],
             [
