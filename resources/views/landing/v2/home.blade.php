@@ -439,7 +439,7 @@
 <section id="contact-us" class="contact">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-12 col-lg-6">
+            <div class="col-12 col-sm-12 col-lg-6 animation" data-animation="fadeInRight" data-animation-delay="0.2s">
                 <h4 class="greenext">Survei Kepuasan Masyarakat</h4>
                 <div class="hero-btns">
                     {{-- <a data-scroll="" data-toggle="modal" data-target="#surveiModal">Survei Kepuasan Masyarakat</a>
@@ -465,7 +465,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-lg-6">
+            <div class="col-12 col-sm-12 col-lg-6 animation" data-animation="fadeInLeft" data-animation-delay="0.2s">
                 <h4 class="greenext">Jumlah Permohonan Informasi Publik</h4>
                 <a href="#">
                     <h1>{{$totalpermohonanselesai}}</h1>
@@ -473,7 +473,7 @@
             </div>
         </div>
         <br><br>
-        <div class="row">
+        <div class="row animation" data-animation="fadeInUp" data-animation-delay="0.2s">
             <div class="col-12">
 
                 <table border="0">
