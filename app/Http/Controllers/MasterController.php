@@ -46,12 +46,12 @@ class MasterController extends Controller
         try {
             $name = $request->instansi_name;
 
-            $newKategori = new RefDataInstansi();
-            $newKategori->name = $name;
-            $newKategori->save();
+            $newInstansi = new RefDataInstansi();
+            $newInstansi->name = $name;
+            $newInstansi->save();
            
-            $newKategori->fresh();
-            $data = $newKategori;
+            $newInstansi->fresh();
+            $data = $newInstansi;
 
             $success = true;
         } catch (\Exception $e) {

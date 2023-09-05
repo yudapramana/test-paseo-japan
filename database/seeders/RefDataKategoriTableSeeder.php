@@ -17,6 +17,9 @@ class RefDataKategoriTableSeeder extends Seeder
         DB::table('ref_data_kategori')->insert([
             #1
             [
+                'name'          => 'Tidak Terkategori'
+            ],
+            [
                 'name'          => 'Urutan Kepegawaian'
             ],
             [

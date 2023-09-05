@@ -92,30 +92,33 @@
         $('.select2-search-kategori').select2({
             theme: 'bootstrap-5',
             dropdownParent: $("#defModal"),
-            ajax: {
-                url: "/search/kategori",
-                dataType: 'json',
-                delay: 250,
-                data: function(params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data, params) {
-                    return {
-                        results: $.map(data, function(item) {
-                            return {
-                                text: item.name,
-                                id: item.id_data_kategori,
-                            }
-                        })
-                    };
-                },
-                cache: true
-            },
+            // ajax: {
+            //     url: "/search/kategori",
+            //     dataType: 'json',
+            //     delay: 250,
+            //     data: function(params) {
+            //         return {
+            //             q: params.term, // search term
+            //             page: params.page
+            //         };
+            //     },
+            //     processResults: function(data, params) {
+            //         console.log('data kategori');
+            //         console.log(data);
+            //         return {
+            //             results: $.map(data, function(item) {
+            //                 return {
+            //                     text: item.name,
+            //                     id: item.id_data_kategori,
+            //                 }
+            //             })
+            //         };
+            //     },
+            //     delay: 250,
+            //     cache: true
+            // },
             placeholder: 'Cari Item Kategori',
-            minimumInputLength: 5,
+            // minimumInputLength: 5,
             "language": {
                 "noResults": function(res, data) {
                     // console.log(res, data);
@@ -132,30 +135,33 @@
         $('.select2-search-instansi').select2({
             theme: 'bootstrap-5',
             dropdownParent: $("#defModal"),
-            ajax: {
-                url: "/search/instansi",
-                dataType: 'json',
-                delay: 250,
-                data: function(params) {
-                    return {
-                        q: params.term, // search term
-                        page: params.page
-                    };
-                },
-                processResults: function(data, params) {
-                    return {
-                        results: $.map(data, function(item) {
-                            return {
-                                text: item.name,
-                                id: item.id_data_instansi,
-                            }
-                        })
-                    };
-                },
-                cache: true
-            },
+            // ajax: {
+            //     url: "/search/instansi",
+            //     dataType: 'json',
+            //     delay: 250,
+            //     data: function(params) {
+            //         return {
+            //             q: params.term, // search term
+            //             page: params.page
+            //         };
+            //     },
+            //     processResults: function(data, params) {
+            //         console.log('data instansi');
+            //         console.log(data);
+            //         return {
+            //             results: $.map(data, function(item) {
+            //                 return {
+            //                     text: item.name,
+            //                     id: item.id_data_instansi,
+            //                 }
+            //             })
+            //         };
+            //     },
+            //     delay: 250,
+            //     cache: true
+            // },
             placeholder: 'Cari Data Instansi / Seksi',
-            minimumInputLength: 5,
+            // minimumInputLength: 5,
             "language": {
                 "noResults": function(res, data) {
                     // console.log(res, data);
@@ -169,148 +175,155 @@
             }
         });
 
-    $(document).on('click', '.add-new-kategori', function(e) {
-        console.log('add new kategori clicked');
-        var kategoriName = $('.select2-search__field').val();
-        console.log('data');
-        console.log(kategoriName);
-        $('#id_data_kategori').select2('close');
-        $('#defForm').block({
-            message: `Loading...`
-        });
+        $(document).on('click', '.add-new-kategori', function(e) {
+            console.log('add new kategori clicked');
+            var kategoriName = $('.select2-search__field').val();
+            console.log('data');
+            console.log(kategoriName);
+            $('#id_data_kategori').select2('close');
+            $('#defForm').block({
+                message: `Loading...`
+            });
 
-        $.ajax({
-            type: 'PUT',
-            url: `/kategori/add`,
-            data: {
-                kategori_name: kategoriName
-            },
-            dataType: 'json', // let's set the expected response format
-            success: function(data) {
-                console.log(data);
-                if (!data.success) {
-                    Swal.fire(
-                        'Error!', data.message, 'error'
-                    );
-                } else {
-                    
-
-                    setTimeout(function() {
-                    // $("#mySelect2").select2('data', { id:"elementID", text: "Hello!"});
-                    var dataKategori = data.data;
-                    console.log('dataKategori');
-                    console.log(dataKategori);
-                    $("#id_data_kategori").select2('data', { id:dataKategori.id_data_kategori, text: dataKategori.name});
-                    
-                    console.log('dataKategori.id_data_kategori');
-                    console.log(dataKategori.id_data_kategori);
-                    $('#id_data_kategori').val(dataKategori.id_data_kategori).trigger("change");
-                    console.log('trigger change done');
-                    $('#defForm').unblock();
-
-                }, 2000);
-
-
-
-                }
-
-            },
-            error: function(err) {
-                if (err.status ==
-                    422) { // when status code is 422, it's a validation issue
-                    console.log(err.responseJSON);
-                    // you can loop through the errors object and show it to the user
-                    console.warn(err.responseJSON.errors);
-                    // display errors on each form field
-                    $('.ajax-invalid').remove();
-                    $.each(err.responseJSON.errors, function(i, error) {
-                        var el = $(document).find('[name="' + i + '"]');
-                        el.after($('<span class="ajax-invalid" style="color: red;">' +
-                            error[0] + '</span>'));
-                    });
-                } else if (err.status == 403) {
-                    Swal.fire(
-                        'Unauthorized!',
-                        'You are unauthorized to do the action',
-                        'warning'
-                    );
-
-                }
-            }
-        });
-    });
-
-
-    $(document).on('click', '.add-new-instansi', function(e) {
-        console.log('add new instansi clicked');
-        var instansiName = $('.select2-search__field').val();
-        console.log('data');
-        console.log(instansiName);
-        $('#id_data_instansi').select2('close');
-        $('#defForm').block({
-            message: `Loading...`
-        });
-
-        $.ajax({
-            type: 'PUT',
-            url: `/instansi/add`,
-            data: {
-                instansi_name: instansiName
-            },
-            dataType: 'json', // let's set the expected response format
-            success: function(data) {
-                setTimeout(function() {
+            $.ajax({
+                type: 'PUT',
+                url: `/kategori/add`,
+                data: {
+                    kategori_name: kategoriName
+                },
+                dataType: 'json', // let's set the expected response format
+                success: function(data) {
                     console.log(data);
                     if (!data.success) {
-                    Swal.fire(
-                        'Error!', data.message, 'error'
-                    );
-                } else {
-                    setTimeout(function() {
-                        // $("#mySelect2").select2('data', { id:"elementID", text: "Hello!"});
-                        var dataInstansi = data.data;
-                        console.log('dataInstansi');
-                        console.log(dataInstansi);
-                        $("#id_data_instansi").select2('data', { id:dataInstansi.id_data_instansi, text: dataInstansi.name});
+                        Swal.fire(
+                            'Error!', data.message, 'error'
+                        );
+                    } else {
+                        var dataKategori = data.data;
+                        console.log('dataKategori');
+                        console.log(dataKategori);
+
+                        var newOption = new Option(dataKategori.name, dataKategori.id_data_kategori, true, true);
+                        $('.select2-search-kategori').append(newOption).trigger('change');
                         
-                        console.log('dataInstansi.id_data_instansi');
-                        console.log(dataInstansi.id_data_instansi);
-                        $('#id_data_instansi').val(dataInstansi.id_data_instansi).trigger("change");
-                        console.log('trigger change done');
                         $('#defForm').unblock();
+                    }
 
-                    }, 2000);
-
-
+                },
+                error: function(err) {
+                    if (err.status ==
+                        422) { // when status code is 422, it's a validation issue
+                        console.log(err.responseJSON);
+                        // you can loop through the errors object and show it to the user
+                        console.warn(err.responseJSON.errors);
+                        // display errors on each form field
+                        $('.ajax-invalid').remove();
+                        $.each(err.responseJSON.errors, function(i, error) {
+                            var el = $(document).find('[name="' + i + '"]');
+                            el.after($('<span class="ajax-invalid" style="color: red;">' +
+                                error[0] + '</span>'));
+                        });
+                    } else if (err.status == 403) {
+                        Swal.fire(
+                            'Unauthorized!',
+                            'You are unauthorized to do the action',
+                            'warning'
+                        );
 
                     }
-                }, 100);
-
-            },
-            error: function(err) {
-                if (err.status ==
-                    422) { // when status code is 422, it's a validation issue
-                    console.log(err.responseJSON);
-                    // you can loop through the errors object and show it to the user
-                    console.warn(err.responseJSON.errors);
-                    // display errors on each form field
-                    $('.ajax-invalid').remove();
-                    $.each(err.responseJSON.errors, function(i, error) {
-                        var el = $(document).find('[name="' + i + '"]');
-                        el.after($('<span class="ajax-invalid" style="color: red;">' +
-                            error[0] + '</span>'));
-                    });
-                } else if (err.status == 403) {
-                    Swal.fire(
-                        'Unauthorized!',
-                        'You are unauthorized to do the action',
-                        'warning'
-                    );
-
                 }
+            });
+        });
+
+
+        $(document).on('click', '.add-new-instansi', function(e) {
+            console.log('add new instansi clicked');
+            var instansiName = $('.select2-search__field').val();
+            console.log('data');
+            console.log(instansiName);
+            $('#id_data_instansi').select2('close');
+            $('#defForm').block({
+                message: `Loading...`
+            });
+
+            $.ajax({
+                type: 'PUT',
+                url: `/instansi/add`,
+                data: {
+                    instansi_name: instansiName
+                },
+                dataType: 'json', // let's set the expected response format
+                success: function(data) {
+                    setTimeout(function() {
+                        console.log(data);
+                        if (!data.success) {
+                            Swal.fire(
+                                'Error!', data.message, 'error'
+                            );
+                        } else {
+                            var dataInstansi = data.data;
+                            console.log('dataInstansi');
+                            console.log(dataInstansi);
+                            var newOption = new Option(dataInstansi.name, dataInstansi.id_data_instansi, true, true);
+                            $('.select2-search-instansi').append(newOption).trigger('change');
+
+                            $('#defForm').unblock();
+                            }
+                    }, 100);
+
+                },
+                error: function(err) {
+                    if (err.status ==
+                        422) { // when status code is 422, it's a validation issue
+                        console.log(err.responseJSON);
+                        // you can loop through the errors object and show it to the user
+                        console.warn(err.responseJSON.errors);
+                        // display errors on each form field
+                        $('.ajax-invalid').remove();
+                        $.each(err.responseJSON.errors, function(i, error) {
+                            var el = $(document).find('[name="' + i + '"]');
+                            el.after($('<span class="ajax-invalid" style="color: red;">' +
+                                error[0] + '</span>'));
+                        });
+                    } else if (err.status == 403) {
+                        Swal.fire(
+                            'Unauthorized!',
+                            'You are unauthorized to do the action',
+                            'warning'
+                        );
+
+                    }
+                }
+            });
+        });
+
+        var lastQueryStringKategori = '';
+        jQuery('.select2-search-kategori').on('select2:open', function () {
+            console.log('opening lastQueryStringKategori:  ' + lastQueryStringKategori);
+            if (lastQueryStringKategori) {
+                jQuery('.select2-search').find('input').focus().val(lastQueryStringKategori).trigger('input');
+            } 
+        });
+
+        jQuery('.select2-search-kategori').on('select2:closing', function () {
+            console.log('closing lastQueryStringKategori:  ' + lastQueryStringKategori);
+
+            lastQueryStringKategori = jQuery('.select2-search').find('input').val();
+        });
+
+        var lastQueryStringInstansi = '';
+        jQuery('.select2-search-instansi').on('select2:open', function () {
+            console.log('opening lastQueryStringInstansi:  ' + lastQueryStringInstansi);
+            if (lastQueryStringInstansi) {
+                jQuery('.select2-search').find('input').focus().val(lastQueryStringInstansi).trigger('input');
             }
         });
-    });
+
+        jQuery('.select2-search-instansi').on('select2:closing', function () {
+            console.log('closing lastQueryStringInstansi:  ' + lastQueryStringInstansi);
+
+            lastQueryStringInstansi = jQuery('.select2-search').find('input').val();
+        });
 
         // Initiate Table
         var defTbl = $("#defTbl").DataTable({
@@ -536,10 +549,10 @@
             $('#id_data_klasifikasi').val(data.id_data_klasifikasi).trigger("change");
             $('#id_data_sub_klasifikasi').val(data.id_data_sub_klasifikasi).trigger("change");
             $('#id_data_kategori').val(data.id_data_kategori).trigger("change");
-            console.log('data.id_data_kategori');
-            console.log(data.id_data_kategori);
+            lastQueryStringKategori = $('#id_data_kategori').select2('data')[0].text;
 
             $('#id_data_instansi').val(data.id_data_instansi).trigger("change");
+            lastQueryStringInstansi = $('#id_data_instansi').select2('data')[0].text;
 
             $('#nama_file').val(data.nama_file);
             $('#tahun').val(data.tahun);
