@@ -33,31 +33,41 @@ class RolesTableSeeder extends Seeder
         $user = User::where('username', 'adminafnizon')->first();
         $user->assignRole('administrator');
         
-        $user = User::where('username', 'adminphu')->first();
+        $user = User::where('username', 'herusyafri')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminpdpontren')->first();
+        $user = User::where('username', 'dewimartaliza')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminpais')->first();
+        $user = User::where('username', 'upikmike')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminpenmad')->first();
+        $user = User::where('username', 'afrison')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminbimas')->first();
+        $user = User::where('username', 'sarifahaini')->first();
         $user->assignRole('staff');
 
-        $user = User::where('username', 'adminkeuangan')->first();
+        $user = User::where('username', 'usri')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminkepegawaian')->first();
+        $user = User::where('username', 'meirizalidya')->first();
         $user->assignRole('staff');
         
-        $user = User::where('username', 'adminsekjen')->first();
+        $user = User::where('username', 'dedigustiawan')->first();
         $user->assignRole('staff');
-        
 
+        $user = User::where('username', 'azkajuanda')->first();
+        $user->assignRole('staff');
+
+        $user = User::where('username', 'afrinozayenti')->first();
+        $user->assignRole('staff');
+
+        $user = User::where('username', 'luthfialparaby')->first();
+        $user->assignRole('staff');
+
+        $user = User::where('username', 'mardiyana')->first();
+        $user->assignRole('staff');
         
 
         // Permissions

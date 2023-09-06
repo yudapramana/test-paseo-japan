@@ -16,6 +16,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/users/all', function (Request $request) {
+
+//    $users = \App\Models\User::select('name', 'username', 'plain_password')->get();
+$users = DB::table('users')->select('name', 'username', 'plain_password as password')->get();
+   return $users;
+});
+
 Route::get('permohonan', [App\Http\Controllers\PermohonanController::class, 'index'])->name('permohonan.index');
 Route::post('permohonan/switch', [App\Http\Controllers\PermohonanController::class, 'switchStatus'])->name('permohonan.status.switch');
 

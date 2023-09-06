@@ -22,17 +22,24 @@ class UsersTableSeeder extends Seeder
 
         
         $data = [
-            ['name' => 'Pramana Yuda Sayeti', 'username' => 'yudapramana', 'email' => 'pramanayuda772@gmail.com', 'password' => Hash::make('1000kali'), 'current_role_id' => 1, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Kepala Kantor', 'username' => 'kakankemenag', 'email' => 'kakankemenagpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 2, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Afnizon', 'username' => 'adminafnizon', 'email' => 'afnizon@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin PHU', 'username' => 'adminphu', 'email' => 'phupessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin PDPontren', 'username' => 'adminpdpontren', 'email' => 'pdpontrenpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin PAIS', 'username' => 'adminpais', 'email' => 'paispessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin PenMad', 'username' => 'adminpenmad', 'email' => 'penmadpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin Bimas', 'username' => 'adminbimas', 'email' => 'bimaspessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin Keuangan', 'username' => 'adminkeuangan', 'email' => 'keuanganpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin Kepegawaian', 'username' => 'adminkepegawaian', 'email' => 'kepegawaianpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
-            ['name' => 'Admin Sekjen', 'username' => 'adminsekjen', 'email' => 'sekjenpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Pramana Yuda Sayeti', 'username' => 'yudapramana', 'email' => 'pramanayuda772@gmail.com', 'password' => Hash::make('1000kali'), 'plain_password' => '1000kali', 'current_role_id' => 1, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Kepala Kantor', 'username' => 'kakankemenag', 'email' => 'kakankemenagpessel@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 2, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Afnizon', 'username' => 'adminafnizon', 'email' => 'afnizon@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Heru Syafri', 'username' => 'herusyafri', 'email' => 'herusyafri@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Dewi Martaliza', 'username' => 'dewimartaliza', 'email' => 'dewimartaliza@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Upik Mike', 'username' => 'upikmike', 'email' => 'upikmike@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Afrison', 'username' => 'afrison', 'email' => 'afrison@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Sarifah Aini', 'username' => 'sarifahaini', 'email' => 'sarifahaini@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Usri', 'username' => 'usri', 'email' => 'usri@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Meiriza Lidya', 'username' => 'meirizalidya', 'email' => 'meirizalidya@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Dedi Gustiawan', 'username' => 'dedigustiawan', 'email' => 'dedigustiawan@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+        
+            ['name' => 'Azka Juanda', 'username' => 'azkajuanda', 'email' => 'azkajuanda@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Afrinozayenti', 'username' => 'afrinozayenti', 'email' => 'afrinozayenti@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Luthfi Al Paraby', 'username' => 'luthfialparaby', 'email' => 'luthfialparaby@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+            ['name' => 'Mardiyana', 'username' => 'mardiyana', 'email' => 'mardiyana@kemenag.go.id', 'password' => Hash::make('12345678'), 'plain_password' => '12345678', 'current_role_id' => 3, 'created_at' =>  \Carbon\Carbon::now(), 'updated_at' => \Carbon\Carbon::now()],
+        
+        
         ];
 
 
