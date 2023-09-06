@@ -214,12 +214,12 @@
                     <a class="alink" href="https://ptsp.kemenagpessel.com/">PTSP</a>
                 </center>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 blog-box">
+            {{-- <div class="col-sm-6 col-md-6 col-lg-4 blog-box">
                 <center>
                     <img src="https://ppid.kemenag.go.id/v4/images/jdih-logo.png" width="70"><br><br>
                     <a class="alink" href="https://jdih.kemenag.go.id/">Produk Hukum</a>
                 </center>
-            </div>
+            </div> --}}
             <div class="col-sm-6 col-md-6 col-lg-4 blog-box">
                 <center>
                     <img src="{{ asset('assets/images/logo_datuak.png') }}"><br><br>
