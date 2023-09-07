@@ -31,10 +31,7 @@ class ActivityController extends Controller
                 ->addColumn('action', function ($activity) {
                     $btn = '';
                     $btn .= '<button id="editBtn" type="button" class="btn btn-sm btn-warning btn-xs" data-bs-toggle="modal" data-bs-target="#tambahGroup" data-bs-title="Edit Data" data-title="Edit Data Pengguna"><i class="bi bi-pencil-square"></i></button>&nbsp;';
-
-                    if ($activity->featured == 'no') {
-                        $btn .= '<button id="destroyBtn" type="button" class="btn btn-sm btn-danger btn-xs" data-bs-id_activity="' . $activity->id_activity  . '" data-id_activity="' .  $activity->id_activity  . '"><i class="bi bi-trash-fill"></i></button>';
-                    }
+                    $btn .= '<button id="destroyBtn" type="button" class="btn btn-sm btn-danger btn-xs" data-bs-id_activity="' . $activity->id_activity  . '" data-id_activity="' .  $activity->id_activity  . '"><i class="bi bi-trash-fill"></i></button>';
                     return $btn;
                 })
                 ->addColumn('cover', function ($activity) {
@@ -122,5 +119,30 @@ class ActivityController extends Controller
             'message' => $message,
             'code' => $code,
         ], $code);
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+
+        $success = false;
+        $message = '';
+
+        try {
+            $res = Activity::findOrFail($id);
+            $res->delete();
+            $success = true;
+        } catch (\Exception $e) {
+            $message = $e->getMessage();
+        }
+
+        return response()
+            ->json(['success' => $success, 'message' => $message]);
     }
 }

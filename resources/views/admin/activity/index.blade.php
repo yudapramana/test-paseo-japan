@@ -129,6 +129,14 @@
 
 
 <script>
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success px-3 mx-3'
+            , cancelButton: 'btn btn-danger px-3 mx-3'
+        }
+        , buttonsStyling: false
+    });
+    
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -313,6 +321,8 @@
             $('#deskripsi').val(data.description);
             $('#featured').val(data.featured).trigger('change');
             $('#listed').val(data.listed).trigger('change');
+            $('#date').val(data.date);
+
 
             $('#nama').prop('disabled', false);
             $('#deskripsi').prop('disabled', false);
@@ -415,6 +425,79 @@
     $(document).on('click', '#retry-content-btn-edit', function(e) {
         $('#content_image_url_btn-edit').show();
         $('.show-content-box-edit').hide();
+    });
+
+
+    $(document).on("click", "#destroyBtn", function() {
+        event.preventDefault();
+        var idActivity = $(this).data('id_activity');
+
+        swalWithBootstrapButtons.fire({
+            title: 'Apakah anda yakin akan melakukan penghapusan data?'
+            , text: "Anda tidak dapat mengembalikan file yang sudah dihapus!"
+            , icon: 'warning'
+            , showCancelButton: true
+            , confirmButtonText: 'Ya, hapus!'
+            , cancelButtonText: 'Tidak, batalkan!'
+            , reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var url = "{{ route('activities.destroy', ':id') }}";
+                url = url.replace(':id', idActivity);
+                $.ajax({
+                    type: 'DELETE'
+                    , url: url
+                    , dataType: 'json', // let's set the expected response format
+                    success: function(data) {
+                        console.log(data);
+                        if (data.success) {
+                            $('#tambahGroup').modal('hide');
+                            swalWithBootstrapButtons.fire(
+                                'Dihapus!'
+                                , 'Data berhasil dihapus'
+                                , 'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Error!', data.message, 'error'
+                            );
+                        }
+                        table.ajax.reload(null, false);
+                    }
+                    , error: function(err) {
+                        if (err.status ==
+                            422
+                        ) { // when status code is 422, it's a validation issue
+                            console.log(err.responseJSON);
+                            // you can loop through the errors object and show it to the user
+                            console.warn(err.responseJSON.errors);
+                            // display errors on each form field
+                            $('.ajax-invalid').remove();
+                            $.each(err.responseJSON.errors, function(i, error) {
+                                var el = $(document).find('[name="' +
+                                    i + '"]');
+                                el.after($('<span class="ajax-invalid" style="color: red;">' +
+                                    error[0] + '</span>'));
+                            });
+                        } else if (err.status == 403) {
+                            Swal.fire(
+                                'Unauthorized!'
+                                , 'You are unauthorized to do the action'
+                                , 'warning'
+                            );
+                        }
+                    }
+                });
+            } else if (
+                /* Read more about handling dismissals below */
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                swalWithBootstrapButtons.fire(
+                    'Dibatalkan!', 'Data Aman', 'error'
+                )
+            }
+        });
+
     });
 
 </script>

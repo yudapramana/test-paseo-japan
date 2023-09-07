@@ -201,11 +201,20 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::findOrFail($id);
 
-        $post->delete();
+        $success = false;
+        $message = '';
 
-        return redirect()->route('posts.index')->with('success','Data moved to trash');
+        try {
+            $res = Post::findOrFail($id);
+            $res->delete();
+            $success = true;
+        } catch (\Exception $e) {
+            $message = $e->getMessage();
+        }
+
+        return response()
+            ->json(['success' => $success, 'message' => $message]);
     }
 
     public function trash(){

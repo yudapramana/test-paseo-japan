@@ -14,7 +14,7 @@ class CreateActivitiesTable extends Migration
     public function up()
     {
         Schema::create('activities', function (Blueprint $table) {
-            $table->id('id_activities');
+            $table->id('id_activity');
             $table->timestamps();
 
             $table->text('cover_image_url')->nullable();

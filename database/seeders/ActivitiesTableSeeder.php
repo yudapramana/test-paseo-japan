@@ -21,7 +21,7 @@ class ActivitiesTableSeeder extends Seeder
         \DB::table('activities')->insert(array (
             0 => 
             array (
-                'id_activities' => 1,
+                'id_activity' => 1,
                 'created_at' => '2023-09-04 13:06:47',
                 'updated_at' => '2023-09-04 13:06:47',
                 'cover_image_url' => 'https://res.cloudinary.com/dezj1x6xp/image/upload/v1693807606/PandanViewMandeh/Pokja_K2MI_iilt33.jpg',
@@ -35,7 +35,7 @@ class ActivitiesTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id_activities' => 2,
+                'id_activity' => 2,
                 'created_at' => '2023-09-04 13:08:21',
                 'updated_at' => '2023-09-04 13:08:21',
                 'cover_image_url' => 'https://res.cloudinary.com/dezj1x6xp/image/upload/v1693807700/PandanViewMandeh/sk_pensiun_bbuzwp.jpg',

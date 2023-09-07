@@ -280,6 +280,8 @@ Route::post('/information/products/store', [\App\Http\Controllers\Admin\ProductC
 
 Route::get('/information/activities', [\App\Http\Controllers\Admin\ActivityController::class, 'index'])->name('activities.index');
 Route::post('/information/activities/store', [\App\Http\Controllers\Admin\ActivityController::class, 'store']);
+Route::delete('/information/destroy/{id}', [\App\Http\Controllers\Admin\ActivityController::class, 'destroy'])->name('activities.destroy');
+
 
 Route::get('/information/galleries', [\App\Http\Controllers\Admin\GalleryController::class, 'index'])->name('galleries.index');
 Route::post('/information/galleries/store', [\App\Http\Controllers\Admin\GalleryController::class, 'store']);
@@ -311,6 +313,9 @@ Route::resource('/blog/tags', App\Http\Controllers\TagController::class);
 Route::get('/blog/posts/trash', [App\Http\Controllers\PostController::class, 'trash'])->name('posts.trash');
 Route::post('/blog/posts/trash/{id}/restore', [App\Http\Controllers\PostController::class, 'restore'])->name('posts.restore');
 Route::delete('blog/posts/{id}/delete-permanent', [App\Http\Controllers\PostController::class, 'deletePermanent'])->name('posts.deletePermanent');
+Route::delete('/blog/posts/destroy/{id}', [\App\Http\Controllers\PostController::class, 'destroy'])->name('posts.destroy');
+
+
 Route::resource('/blog/posts', App\Http\Controllers\PostController::class);
 Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');
 
