@@ -42,6 +42,8 @@
                                     Pimpinan</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="https://haji.kemenagpessel.com">Haji
                                     Kemenag Pessel</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="https://simbutu.kemenagpessel.com">BukuTamu
+                                    Kemenag Pessel</a></li>
                         </ul>
                     </ul>
                 </div>
