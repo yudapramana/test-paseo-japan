@@ -211,7 +211,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/aktifitas', function (Request $request) {
 
-        $activities = \App\Models\Activity::paginate(4);
+        $activities = \App\Models\Activity::orderBy('created_at', 'DESC')->paginate(4);
 
 
         $categories = \App\Models\Category::withCount('posts')->get();
