@@ -119,7 +119,8 @@
                                     <thead class="text-center">
                                         <th>No</th>
                                         <th>Judul / Keterangan</th>
-                                        <th>Kategori</th>
+                                        <th>Instansi / Seksi - Kategori</th>
+                                        <th>Klasifikasi</th>
                                         <th>Tahun & Tempat</th>
                                         <th>Penanggung Jawab</th>
                                         <th>Hits / Download</th>
@@ -229,15 +230,19 @@
                         html += `
                     <tr>
                         <td class="text-center">${numberinc}</td>
-                        <td style="font-size:large;">
+                        <td style="font-size:medium;">
                             <a href="/data/detail/${item.id_data_file_encrypt}">
                             ${item.keterangan}
-                            </>
-                            </td>
-                        <td class="text-center" style="color:grey">${item.klasifikasi.name} <hr> ${item.subklasifikasi.name}</td>
-                        <td class="text-center" style="color:grey">${item.tahun}/${item.tempat == null ? '-' : item.tempat}</td>
-                        <td class="text-center" style="color:grey">${item.penanggung_jawab == null ? '-' : item.penanggung_jawab} <br> ${item.instansi.name}</td>
-                        <td class="text-center" style="color:grey">
+                            </a>    
+                        </td>
+                        <td class="text-center">
+                            <span class="text-muted" style="font-size:small !important">${item.instansi.name}</span> <br>
+                            <span class="badge badge-primary" style="font-size:small !important">${item.kategori.name}</span>
+                        </td>
+                        <td class="text-center" style="color:grey; font-size:small;">${item.klasifikasi.name} <hr> ${item.subklasifikasi.name}</td>
+                        <td class="text-center" style="color:grey; font-size:small;">${item.tahun}/${item.tempat == null ? '-' : item.tempat}</td>
+                        <td class="text-center" style="color:grey; font-size:small;">${item.penanggung_jawab == null ? '-' : item.penanggung_jawab}</td>
+                        <td class="text-center" style="color:grey; font-size:small;">
                             ${item.hits} kunjungan 
                             <hr>
                             ${item.download} unduhan
