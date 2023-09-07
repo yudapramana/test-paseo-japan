@@ -64,7 +64,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/contact', function () {
         return view('landing.v2.contact', [
-            'title' => 'Contact - Pandan View Mandeh',
+            'title' => 'Contact - PPID KemenagPessel',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',
             'channel' =>  '@pandanviewmandehofficial4919'
@@ -78,7 +78,7 @@ Route::group(['middleware' => ['web']], function () {
 
         $filterTags = $galleries->pluck('filter_tag')->unique();
         return view('landing.gallery', [
-            'title' => 'Gallery Pandan View Mandeh',
+            'title' => 'Gallery PPID KemenagPessel',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',
             'channel' =>  '@pandanviewmandehofficial4919',
@@ -90,7 +90,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/aboutus', function () {
 
         return view('landing.aboutus', [
-            'title' => 'Pandan View Mandeh - About Us',
+            'title' => 'PPID KemenagPessel - About Us',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',
             'channel' =>  '@pandanviewmandehofficial4919'
@@ -123,7 +123,7 @@ Route::group(['middleware' => ['web']], function () {
         $services = \App\Models\Services::where('listed', 'yes')->get();
 
         return view('landing.all-services', [
-            'title' => 'Pandan View Mandeh - Semua Layanan',
+            'title' => 'PPID KemenagPessel - Semua Layanan',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',
             'channel' =>  '@pandanviewmandehofficial4919',
@@ -159,12 +159,72 @@ Route::group(['middleware' => ['web']], function () {
         $recent_posts = \App\Models\Post::where('is_news', 'yes')->take(3)->get();
 
         return view('landing.v2.blog', [
-            'title' => 'Blog Pandan View Mandeh',
+            'title' => 'Blog PPID KemenagPessel',
             'accountfb' => 'pandanviewmandeh',
             'account' => 'pandanviewmandeh',
             'channel' =>  '@pandanviewmandehofficial4919',
             'categories' =>  $categories,
             'posts' => $posts,
+            'recent_posts' => $recent_posts,
+            'tags' => $tags
+        ]);
+    });
+
+    Route::get('/berita', function (Request $request) {
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $posts = \App\Models\Post::where('is_news', 'yes')->where('title', 'LIKE', "%{$search}%")
+                ->orWhere('desc', 'LIKE', "%{$search}%")->orderBy('created_at', 'DESC')->paginate(4);
+        } elseif ($request->has('category')) {
+            $search = $request->input('category');
+            $posts = \App\Models\Post::where('is_news', 'yes')->whereHas('category', function($q) use($search) {
+                $q->where('slug', $search);
+            })->orderBy('created_at', 'DESC')->paginate(4);
+        } elseif ($request->has('tag')) {
+            $search = $request->input('tag');
+            $posts = \App\Models\Post::where('is_news', 'yes')->whereHas('tags', function($q) use($search) {
+                $q->where('slug', $search);
+            })->orderBy('created_at', 'DESC')->paginate(4);
+        }else {
+            $posts = \App\Models\Post::where('is_news', 'yes')->orderBy('created_at', 'DESC')->paginate(4);
+        }
+
+        $posts->appends(request()->input())->links();
+
+
+        $categories = \App\Models\Category::withCount('posts')->get();
+        $tags = \App\Models\Tag::all();
+        $recent_posts = \App\Models\Post::where('is_news', 'yes')->take(3)->get();
+
+        return view('landing.v2.news', [
+            'title' => 'Berita PPID KemenagPessel',
+            'accountfb' => 'pandanviewmandeh',
+            'account' => 'pandanviewmandeh',
+            'channel' =>  '@pandanviewmandehofficial4919',
+            'categories' =>  $categories,
+            'posts' => $posts,
+            'recent_posts' => $recent_posts,
+            'tags' => $tags
+        ]);
+    });
+
+    Route::get('/aktifitas', function (Request $request) {
+
+        $activities = \App\Models\Activity::paginate(4);
+
+
+        $categories = \App\Models\Category::withCount('posts')->get();
+        $tags = \App\Models\Tag::all();
+        $recent_posts = \App\Models\Post::where('is_news', 'yes')->take(3)->get();
+
+        return view('landing.v2.activities', [
+            'title' => 'Aktifitas KemenagPessel',
+            'accountfb' => 'pandanviewmandeh',
+            'account' => 'pandanviewmandeh',
+            'channel' =>  '@pandanviewmandehofficial4919',
+            'categories' =>  $categories,
+            'activities' => $activities,
             'recent_posts' => $recent_posts,
             'tags' => $tags
         ]);
