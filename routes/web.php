@@ -332,7 +332,7 @@ Route::get('add-categories-to-menu',  [\App\Http\Controllers\Admin\MenuControlle
 Route::post('save-menu',  [\App\Http\Controllers\Admin\MenuController::class, 'saveMenu']);	
 Route::get('add-posts-to-menu',  [\App\Http\Controllers\Admin\MenuController::class, 'addPost']);	
 Route::get('add-custom-link',  [\App\Http\Controllers\Admin\MenuController::class, 'addCustomLink']);
-Route::post('update-menuitem/{id}',  [\App\Http\Controllers\Admin\MenuController::class, 'updateItem']);	
+Route::post('update-menuitem/{id}/{k1}/{k2?}/{k3?}',  [\App\Http\Controllers\Admin\MenuController::class, 'updateItem']);	
 Route::get('delete-menuitem/{id}/{k1}/{k2?}/{k3?}',  [\App\Http\Controllers\Admin\MenuController::class, 'deleteItem']);	
 
 

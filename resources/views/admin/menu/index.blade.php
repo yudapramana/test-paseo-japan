@@ -345,7 +345,8 @@
                             <div class="collapse" id="collapseMenu{{$menuitem1->id}}">
                                 <div class="card">
                                     <div class="card-body mt-3">
-                                        <form method="post" action="{{url('update-menuitem')}}/{{$menuitem1->id}}">
+                                        <form method="post"
+                                            action="{{url('update-menuitem')}}/{{$menuitem1->id}}/{{$k1}}">
                                             {{ csrf_field() }}
                                             <div class="row g-2">
                                                 <div class="col-12">
@@ -402,7 +403,7 @@
                                         <div class="card">
                                             <div class="card-body mt-3">
                                                 <form method="post"
-                                                    action="{{url('update-menuitem')}}/{{$menuitem2->id}}">
+                                                    action="{{url('update-menuitem')}}/{{$menuitem2->id}}/{{$k1}}/{{$k2}}">
                                                     {{ csrf_field() }}
                                                     <div class="row g-2">
                                                         <div class="col-12">
@@ -461,7 +462,7 @@
                                                 <div class="card">
                                                     <div class="card-body mt-3">
                                                         <form method="post"
-                                                            action="{{url('update-menuitem')}}/{{$menuitem3->id}}">
+                                                            action="{{url('update-menuitem')}}/{{$menuitem3->id}}/{{$k1}}/{{$k2}}/{{$k3}}">
                                                             {{ csrf_field() }}
                                                             <div class="row g-2">
                                                                 <div class="col-12">
