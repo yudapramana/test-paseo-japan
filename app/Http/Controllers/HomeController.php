@@ -40,29 +40,40 @@ class HomeController extends Controller
     }
 
 
-    public function info($sect){
+    public function info($sect)
+    {
 
         // $sect = $this->_toUpper($sect);
         $klasifikasi_s = RefDataKlasifikasi::where('slug', $sect)->first();
+        $id_data_klasifikasi = null;
+        if ($klasifikasi_s) {
+            $id_data_klasifikasi = $klasifikasi_s->id_data_klasifikasi;
+        }
+
+        if ($id_data_klasifikasi == null && $sect != 'semua_informasi_publik') {
+            abort(404);
+        }
 
         $instansi_s = RefDataInstansi::all();
         return view('landing.v2.info', [
             'instansi_s' => $instansi_s,
             'klasifikasi_s' => $klasifikasi_s,
+            'id_data_klasifikasi' => $id_data_klasifikasi,
             'sect' => $this->_toUpper($sect),
             'title' => 'PPID - ' . $this->_toUpper($sect),
         ]);
+        
     }
 
-    public function _toUpper($string, $capitalizeFirstCharacter = true) 
+    public function _toUpper($string, $capitalizeFirstCharacter = true)
     {
-    
+
         $str = ucwords(str_replace('_', ' ', $string));
-    
+
         if (!$capitalizeFirstCharacter) {
             $str[0] = strtolower($str[0]);
         }
-    
+
         return $str;
     }
 
@@ -70,8 +81,12 @@ class HomeController extends Controller
     {
         $search = $request['search'];
         $id_data_instansi = $request['id_data_instansi'];
-        $id_data_klasifikasi = $request['id_data_klasifikasi'];
-    
+        $id_data_klasifikasi = null;
+        if ($request['id_data_klasifikasi'] != '') {
+            $id_data_klasifikasi = $request['id_data_klasifikasi'];
+        }
+
+
         $query = TrxDataFile::query();
         // $query = $query->whereHas('datalabel');
         // $query = $query->with('datalabel.datakategori.dataseksi');
@@ -79,12 +94,14 @@ class HomeController extends Controller
 
 
         if ($search) {
-            $query = $query->where('id_data_klasifikasi', $id_data_klasifikasi);
+            if ($id_data_klasifikasi) {
+                $query = $query->where('id_data_klasifikasi', $id_data_klasifikasi);
+            }
             $query = $query->where('nama_file', 'like', '%' . $search . '%')
-                            ->orWhere('keterangan', 'like', '%' . $search . '%');
+                ->orWhere('keterangan', 'like', '%' . $search . '%');
         }
 
-        if($id_data_klasifikasi) {
+        if ($id_data_klasifikasi) {
             $query = $query->where('id_data_klasifikasi', $id_data_klasifikasi);
         }
 
@@ -94,6 +111,5 @@ class HomeController extends Controller
 
         $datas = $query->paginate(10);
         return $datas;
-
     }
 }

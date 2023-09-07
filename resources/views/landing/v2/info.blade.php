@@ -79,7 +79,7 @@
                         <form role="form" id="search-form" autocomplete="off" style="width:100%">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <input type="hidden" name="id_data_klasifikasi" id="id_data_klasifikasi"
-                                value="{{ $klasifikasi_s->id_data_klasifikasi }}">
+                                value="{{ $id_data_klasifikasi }}">
                             <div class="form-group col-sm-12">
                                 <label>Judul/Deskripsi</label>
                                 <input placeholder="Judul/Deskripsi" class="form-control" name="search" id="search"
