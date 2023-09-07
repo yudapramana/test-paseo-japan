@@ -264,9 +264,12 @@
                 <div class="bd-example">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
-                            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+                            @foreach($activities as $key => $act)
+                            <li data-target="#carouselExampleCaptions" data-slide-to="{{$key}}"
+                                class="@if($key == 1) active @endif"></li>
+                            @endforeach
+                            {{-- <li data-target="#carouselExampleCaptions" data-slide-to="1" class=""></li>
+                            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li> --}}
                         </ol>
                         <div class="carousel-inner">
                             @foreach($activities as $key => $act)
