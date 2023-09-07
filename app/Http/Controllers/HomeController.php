@@ -22,7 +22,7 @@ class HomeController extends Controller
         $carousels = \App\Models\Carousel::where('active', 'yes')->get();
 
         $recent_posts = \App\Models\Post::where('is_news', 'yes')->orderBy('created_at', 'DESC')->take(3)->get();
-        $activities = \App\Models\Activity::orderBy('created_at', 'DESC')->take(3)->get();
+        $activities = \App\Models\Activity::orderBy('created_at', 'DESC')->take(6)->get();
 
         $totalpermohonanselesai = Permohonan::count();
 
