@@ -75,7 +75,7 @@
                     <div class="phone">
                         <i class="bi bi-phone"></i>
                         <h4>Call:</h4>
-                        <p>+62822-9847-6941</p>
+                        <p>-</p>
                     </div>
 
                 </div>
