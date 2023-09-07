@@ -40,6 +40,8 @@
                                     Kemenag Pessel</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="https://agenda.kemenagpessel.com">E Agenda
                                     Pimpinan</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="https://agenda.kemenagpessel.com">Haji
+                                    Kemenag Pessel</a></li>
                         </ul>
                     </ul>
                 </div>
@@ -51,6 +53,9 @@
                         <li><a href="https://sumbar.kemenag.go.id/">Kemenag Provinsi</a></li>
                         <li><a href="https://kemenag.go.id/">Kemenag RI</a></li>
                         <li><a href="https://ppid.kemenag.go.id/">PPID Kemenag RI</a></li>
+                        <li><a href="https://pusaka.kemenag.go.id/">Pusaka Kemenag RI</a></li>
+
+
                     </ul>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 animation" data-animation="fadeInUp"
