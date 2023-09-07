@@ -42,5 +42,11 @@ class DatabaseSeeder extends Seeder
         $this->call(RefDataClassificationSeeder::class);
         $this->call(ActivitiesTableSeeder::class);
         $this->call(DaftarPermohonanTableSeeder::class);
+        // $this->call(DataFileRawDBSeeder::class);
+        // $this->call(MediaRawDBSeeder::class);
+
+
+        $this->call(TrxDataFileTableSeeder::class);
+        $this->call(MediaTableSeeder::class);
     }
 }

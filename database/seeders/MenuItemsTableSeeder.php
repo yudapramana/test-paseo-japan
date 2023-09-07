@@ -379,6 +379,30 @@ class MenuItemsTableSeeder extends Seeder
                 'target' => '_self',
                 'menu_id' => 1,
             ),
+            30 => 
+            array (
+                'id' => 33,
+                'created_at' => '2023-09-07 08:05:29',
+                'updated_at' => '2023-09-07 08:05:29',
+                'title' => 'Berita',
+                'name' => NULL,
+                'slug' => 'berita',
+                'type' => 'custom',
+                'target' => '_self',
+                'menu_id' => 1,
+            ),
+            31 => 
+            array (
+                'id' => 34,
+                'created_at' => '2023-09-07 09:16:27',
+                'updated_at' => '2023-09-07 09:16:27',
+                'title' => 'Aktifitas',
+                'name' => NULL,
+                'slug' => 'aktifitas',
+                'type' => 'custom',
+                'target' => '_self',
+                'menu_id' => 1,
+            ),
         ));
         
         
