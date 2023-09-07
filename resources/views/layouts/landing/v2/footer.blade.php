@@ -95,8 +95,7 @@
                         <li>
                             <div class="post_footer">
                                 <div class="post_content">
-                                    <h6><a href="/info/informasi_dikecualikan">INFORMASI YANG
-                                            DIKECUALIKAN</a></h6>
+                                    <h6><a href="/info/informasi_dikecualikan">Informasi yang Dikecualikan</a></h6>
                                 </div>
                             </div>
                         </li>
