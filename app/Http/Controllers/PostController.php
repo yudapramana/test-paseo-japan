@@ -180,7 +180,7 @@ class PostController extends Controller
         $post->cover        = isset($request->cover) ? $request->cover : null;
         $post->title        = $request->title;
         $post->slug         = $request->slug;
-        $post->user_id      = Auth::user()->id;
+        // $post->user_id      = Auth::user()->id;
         $post->category_id  = $request->category;
         $post->desc         = $request->desc;
         $post->keywords     = $request->keywords;
