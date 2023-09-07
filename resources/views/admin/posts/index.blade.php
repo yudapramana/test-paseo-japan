@@ -439,7 +439,7 @@
             , reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {
-                var url = "{{ route('posts.destroy', ':id') }}";
+                var url = "{{ route('posts.delete', ':id') }}";
                 url = url.replace(':id', idItem);
                 $.ajax({
                     type: 'DELETE'
