@@ -40,7 +40,7 @@
                                     Kemenag Pessel</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="https://agenda.kemenagpessel.com">E Agenda
                                     Pimpinan</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="https://agenda.kemenagpessel.com">Haji
+                            <li><i class="bx bx-chevron-right"></i> <a href="https://haji.kemenagpessel.com">Haji
                                     Kemenag Pessel</a></li>
                         </ul>
                     </ul>
