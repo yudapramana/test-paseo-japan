@@ -25,7 +25,7 @@ class InfoController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->orderBy('created_at', 'DESC')->get();
+        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->get();
 
         if ($request->ajax()) {
             return DataTables::of($datas)
