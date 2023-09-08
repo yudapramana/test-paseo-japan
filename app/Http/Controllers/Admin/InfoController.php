@@ -25,16 +25,16 @@ class InfoController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->get();
+        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->orderBy('created_at', 'DESC')->get();
 
         if ($request->ajax()) {
             return DataTables::of($datas)
             ->addIndexColumn()
             ->addColumn('jenisklasifikasiinformasi', function ($item) {
-                return $item->klasifikasi->name . '<hr />' . $item->subklasifikasi->name;
+                return ($item->klasifikasi ? $item->klasifikasi->name : '-') . '<hr />' .  ($item->subklasifikasi ? $item->subklasifikasi->name : '-');
             })
             ->addColumn('instansipenanggungjawab', function ($item) {
-                return $item->instansi->name . ' / ' . $item->penanggung_jawab;
+                return ($item->instansi ? $item->instansi->name : '-') . ' / ' . $item->penanggung_jawab;
             })
             ->addColumn('fileketerangan', function ($item) {
 
