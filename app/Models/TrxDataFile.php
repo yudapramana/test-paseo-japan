@@ -42,12 +42,12 @@ class TrxDataFile extends Model implements HasMedia
 
     public function klasifikasi()
     {
-        return $this->hasOne('App\Models\RefDataKlasifikasi', 'id_data_klasifikasi', 'id_data_klasifikasi');
+        return $this->belongsTo('App\Models\RefDataKlasifikasi', 'id_data_klasifikasi');
     }
 
     public function subklasifikasi()
     {
-        return $this->hasOne('\App\Models\RefDataSubKlasifikasi', 'id_data_sub_klasifikasi');
+        return $this->belongsTo('\App\Models\RefDataSubKlasifikasi', 'id_data_sub_klasifikasi');
     }
 
     public function getIdDataFileEncryptAttribute()
