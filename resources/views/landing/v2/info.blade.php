@@ -236,10 +236,10 @@
                             </a>    
                         </td>
                         <td class="text-center">
-                            <span class="text-muted" style="font-size:small !important">${item.instansi.name}</span> <br>
+                            <span class="text-muted" style="font-size:small !important">${item.instansi ? item.instansi.name : '-'}</span> <br>
                             <span class="badge badge-primary" style="font-size:small !important">${item.kategori.name}</span>
                         </td>
-                        <td class="text-center" style="color:grey; font-size:small;">${item.klasifikasi.name} <hr> ${item.subklasifikasi.name}</td>
+                        <td class="text-center" style="color:grey; font-size:small;">${item.klasifikasi ? item.klasifikasi.name : '-'} <hr> ${item.subklasifikasi ? item.subklasifikasi.name : '-'}</td>
                         <td class="text-center" style="color:grey; font-size:small;">${item.tahun}/${item.tempat == null ? '-' : item.tempat}</td>
                         <td class="text-center" style="color:grey; font-size:small;">${item.penanggung_jawab == null ? '-' : item.penanggung_jawab}</td>
                         <td class="text-center" style="color:grey; font-size:small;">
