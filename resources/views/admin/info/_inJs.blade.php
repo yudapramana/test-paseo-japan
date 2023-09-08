@@ -462,7 +462,7 @@
             toggle('berkas-upload', 'none');
             checkedRequired = true;
             $("#data_file_required").val('true');
-            $('#defForm')[0].reset();
+            // $('#defForm')[0].reset();
 
             $('#defForm :text').val('');
 

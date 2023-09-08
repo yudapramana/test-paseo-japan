@@ -111,7 +111,7 @@
                     <div class="hero-btns">
                         <a class="btn btn-default" href="/sect/permohonan_informasi">Ya, saya ingin mendaftar
                             online</a>&nbsp;
-                        <a class="btn btn-customed-line" href="/sect/panduan_manual">Tidak, saya ingin mendaftar
+                        <a class="btn btn-customed-line" href="/data/detail/gK">Tidak, saya ingin mendaftar
                             manual</a>
                     </div>
                 </center>
