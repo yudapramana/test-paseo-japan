@@ -31,10 +31,10 @@ class InfoController extends Controller
             return DataTables::of($datas)
             ->addIndexColumn()
             ->addColumn('jenisklasifikasiinformasi', function ($item) {
-                return ($item->klasifikasi ? $item->klasifikasi->name : '-') . '<hr />' .  ($item->subklasifikasi ? $item->subklasifikasi->name : '-');
+                return ($item->klasifikasi ? $item->klasifikasi->name : 'n/a') . '<hr />' .  ($item->subklasifikasi ? $item->subklasifikasi->name : 'n/a');
             })
             ->addColumn('instansipenanggungjawab', function ($item) {
-                return ($item->instansi ? $item->instansi->name : '-') . ' / ' . $item->penanggung_jawab;
+                return ($item->instansi ? $item->instansi->name : 'n/a') . ' / ' . $item->penanggung_jawab;
             })
             ->addColumn('fileketerangan', function ($item) {
 
