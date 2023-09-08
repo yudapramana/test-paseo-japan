@@ -97,7 +97,8 @@
                                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                             data-parent="#accordion">
                                             <div class="card-body">
-                                                {{ $dataFile->instansi->name }}
+                                                {{ $dataFile->instansi ? $dataFile->instansi->name : 'Tidak ada
+                                                Instansi'}}
                                             </div>
                                         </div>
                                     </div>
@@ -110,7 +111,10 @@
                                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                             data-parent="#accordion">
                                             <div class="card-body">
-                                                {{ $dataFile->klasifikasi->name }} - {{ $dataFile->subklasifikasi->name
+                                                {{ $dataFile->klasifikasi ? $dataFile->klasifikasi->name : 'Tidak ada
+                                                Klasifikasi' }} - {{
+                                                $dataFile->subklasifikasi ? $dataFile->subklasifikasi->name : 'Tidak ada
+                                                Subklasifikasi'
                                                 }}
                                                 <hr>
                                                 <button class="btn btn-xs btn-primary">{{
