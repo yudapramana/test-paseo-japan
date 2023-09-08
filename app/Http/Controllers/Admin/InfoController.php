@@ -25,7 +25,7 @@ class InfoController extends Controller
      */
     public function index(Request $request)
     {
-        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->get();
+        $datas = TrxDataFile::with('instansi', 'kategori', 'klasifikasi', 'subklasifikasi')->orderBy('created_at', 'DESC')->get();
 
         if ($request->ajax()) {
             return DataTables::of($datas)
@@ -147,7 +147,7 @@ class InfoController extends Controller
                 $itemFile->akses = $data['akses'];
                 $itemFile->bentuk = $data['bentuk'];
     
-                $itemFile->updated_by = auth()->user()->username;
+                $itemFile->updated_by = auth()->user()->name;
                 $itemFile->save();
 
                 if($request->data_file) {
@@ -204,7 +204,7 @@ class InfoController extends Controller
                 $itemFile->akses = $data['akses'];
                 $itemFile->bentuk = $data['bentuk'];
     
-                $itemFile->created_by = auth()->user()->username;
+                $itemFile->created_by = auth()->user()->name;
                 $itemFile->save();
                 $itemFile = $itemFile->fresh();
     
