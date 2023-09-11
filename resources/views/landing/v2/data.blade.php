@@ -1,20 +1,20 @@
 @extends('layouts.landing.v2.master')
-@section('title', 'Detail Data')
+@section('title', 'PPID - ' . $keterangan)
 
 
 @section('_styles')
 
 {{-- Primary Meta Tags --}}
-<meta name="title" content="{{$title}}">
-<meta name="description" content="{{$title}}" />
+<meta name="title" content="{{$keterangan}}">
+<meta name="description" content="{{$keterangan}}" />
 <meta name="keywords" content="About PPID KemenagPessel, Mandeh, Pesisir Selatan, Puncak Mandeh" />
 <meta name="author" content="PPID KemenagPessel" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="revisit-after" content="1 Days" />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:site_name" content="{{$title}}">
-<meta property="og:title" content="{{$title}}">
+<meta property="og:site_name" content="{{$keterangan}}">
+<meta property="og:title" content="{{$keterangan}}">
 <meta property="og:locale" content="id_ID">
 <meta property="og:description"
     content="PPID KemenagPessel Resort PPID KemenagPessel terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. PPID KemenagPessel terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
@@ -25,8 +25,8 @@
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="{{$title}}" />
-<meta name="twitter:title" content="{{$title}}" />
+<meta name="twitter:site" content="{{$keterangan}}" />
+<meta name="twitter:title" content="{{$keterangan}}" />
 <meta name="twitter:description"
     content="PPID KemenagPessel Resort PPID KemenagPessel terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. PPID KemenagPessel terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
 <meta name="twitter:image" content="{{ asset('sailor/img/logo.png') }}" />

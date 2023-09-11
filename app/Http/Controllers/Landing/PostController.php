@@ -36,6 +36,7 @@ class PostController extends Controller
                 'categories' =>  $categories,
                 'recent_posts' => $recent_posts,
                 'tags' => $tags,
+                'keterangan' => $dataFile->keterangan
             ]);
         } else {
             abort(404, 'Page Not found');
