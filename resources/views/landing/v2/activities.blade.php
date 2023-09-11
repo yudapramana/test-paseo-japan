@@ -6,8 +6,9 @@
 {{-- Primary Meta Tags --}}
 <meta name="title" content="{{$title}}">
 <meta name="description" content="{{$title}}" />
-<meta name="keywords" content="About Pandan View Mandeh, Mandeh, Pesisir Selatan, Puncak Mandeh" />
-<meta name="author" content="Pandan View Mandeh" />
+<meta name="keywords"
+    content="About PPID Kementerian Agama Kab. Pesisir Selatan, Mandeh, Pesisir Selatan, Puncak Mandeh" />
+<meta name="author" content="PPID Kementerian Agama Kab. Pesisir Selatan" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="revisit-after" content="1 Days" />
 
@@ -16,7 +17,7 @@
 <meta property="og:title" content="{{$title}}">
 <meta property="og:locale" content="id_ID">
 <meta property="og:description"
-    content="Pandan View Mandeh Resort Pandan View Mandeh terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. Pandan View Mandeh terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
+    content="PPID Kementerian Agama Kab. Pesisir Selatan Resort PPID Kementerian Agama Kab. Pesisir Selatan terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. PPID Kementerian Agama Kab. Pesisir Selatan terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
 <meta property="og:image" content="{{ asset('sailor/img/logo.png') }}" />
 
 <meta property="og:type" content=website />
@@ -27,7 +28,7 @@
 <meta name="twitter:site" content="{{$title}}" />
 <meta name="twitter:title" content="{{$title}}" />
 <meta name="twitter:description"
-    content="Pandan View Mandeh Resort Pandan View Mandeh terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. Pandan View Mandeh terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
+    content="PPID Kementerian Agama Kab. Pesisir Selatan Resort PPID Kementerian Agama Kab. Pesisir Selatan terletak dikawasan destinasi wisata bahari Teluk Mandeh yang menghadirkan sebuah kafe dan cottage untuk wisatawan lokal, domestik dan manca negara. PPID Kementerian Agama Kab. Pesisir Selatan terdapat beberapa spot spot berfoto yang indah dan pemandangan yang indah langsung k...">
 <meta name="twitter:image" content="{{ asset('sailor/img/logo.png') }}" />
 <meta property="twitter:url" content="{{ URL::current() }}">
 

@@ -8,13 +8,13 @@
 <meta name="title" content="{{ $post->title }}">
 <meta name="description" content="{{ $post->meta_desc }}">
 <meta name="keywords" content="{{ $post->keywords }}">
-<meta name="author" content="Pandan View Mandeh" />
+<meta name="author" content="PPID KemenagPessel" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 <meta name="revisit-after" content="1 Days" />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:site_name" content="PANDAN VIEW MANDEH">
-<meta property="og:title" content="PANDAN VIEW MANDEH - {{ $post->title }} ">
+<meta property="og:site_name" content="PPID KemenagPessel">
+<meta property="og:title" content="PPID KemenagPessel - {{ $post->title }} ">
 <meta property="og:locale" content="id_ID">
 
 <meta property="og:type" content=article />
