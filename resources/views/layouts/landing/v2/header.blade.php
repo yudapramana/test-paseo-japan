@@ -77,7 +77,7 @@
                         @else
 
                         <li class="dropdown">
-                            <a class="nav-link"
+                            <a class="nav-link dropdown-toggle"
                                 href="@if($menuitem->target == '_self') {{'/'.$menuitem->slug}} @else {{$menuitem->slug}} @endif">{{$menuitem->title}}</a>
                             <div class="dropdown-menu">
                                 <ul>
@@ -90,7 +90,7 @@
                                     </li>
                                     @else
                                     <li>
-                                        <a class=" dropdown-item menu-link"
+                                        <a class=" dropdown-item menu-link dropdown-toggle"
                                             href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
 
 
