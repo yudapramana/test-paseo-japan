@@ -77,7 +77,7 @@
                         @else
 
                         <li class="dropdown">
-                            <a data-toggle="dropdown" class="nav-link dropdown-toggle"
+                            <a class="nav-link"
                                 href="@if($menuitem->target == '_self') {{'/'.$menuitem->slug}} @else {{$menuitem->slug}} @endif">{{$menuitem->title}}</a>
                             <div class="dropdown-menu">
                                 <ul>
@@ -90,7 +90,7 @@
                                     </li>
                                     @else
                                     <li>
-                                        <a class=" dropdown-item menu-link dropdown-toggler"
+                                        <a class=" dropdown-item menu-link"
                                             href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
 
 
@@ -121,7 +121,7 @@
 
                         <li><a class="nav-link" href="gallery.html">Gallery</a></li>
                         <li class="dropdown">
-                            <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Blog</a>
+                            <a class="nav-link dropdown-toggle" href="#">Blog</a>
                             <div class="dropdown-menu">
                                 <ul>
                                     <li>
