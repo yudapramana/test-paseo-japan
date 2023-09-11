@@ -77,7 +77,8 @@
                         @else
 
                         <li class="dropdown">
-                            <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{$menuitem->title}}</a>
+                            <a data-toggle="dropdown" class="nav-link dropdown-toggle"
+                                href="@if($menuitem->target == '_self') {{'/'.$menuitem->slug}} @else {{$menuitem->slug}} @endif">{{$menuitem->title}}</a>
                             <div class="dropdown-menu">
                                 <ul>
                                     @foreach($menuitem->children[0] as $k2 => $menuitem2)
@@ -85,12 +86,12 @@
                                     @if(count($menuitem2->children[0]) == 0)
                                     <li>
                                         <a class="dropdown-item nav-link nav_item" target="{{$menuitem2->target}}"
-                                            href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif"">{{$menuitem2->title}}</a>
+                                            href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
                                     </li>
                                     @else
                                     <li>
                                         <a class=" dropdown-item menu-link dropdown-toggler"
-                                            href="#">{{$menuitem2->title}}</a>
+                                            href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
 
 
                                         <div class="dropdown-menu">
