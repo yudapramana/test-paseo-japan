@@ -134,7 +134,7 @@
                         <li><a class="nav-link" href="demo-medical/contact.html">Contact Us</a></li> --}}
                     </ul>
                 </div>
-                <div class="search_box">
+                {{-- <div class="search_box">
                     <form>
                         <div class="radius_input">
                             <input type="text" class="form-control" required="" placeholder="Search...">
@@ -142,7 +142,7 @@
                         <button type="submit" name="submit" value="Submit"><i
                                 class="ion-ios-search-strong"></i></button>
                     </form>
-                </div>
+                </div> --}}
             </nav>
         </div>
     </div>
