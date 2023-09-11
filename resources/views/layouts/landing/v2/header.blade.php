@@ -4,11 +4,14 @@
             <div class="row align-items-center">
                 <div class="col-md-4 col-sm-5 col-8">
                     <ul class="list_none social_icons border_social rounded_social social_white">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                        <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
-                        <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                        <li><a href="https://www.facebook.com/kemenagpessel.painan"><i
+                                    class="ion-social-facebook"></i></a></li>
+                        {{-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> --}}
+                        {{-- <li><a href="#"><i class="ion-social-googleplus"></i></a></li> --}}
+                        <li><a href="https://youtube.com/@kantorkemenagpessel2940"><i
+                                    class="ion-social-youtube-outline"></i></a></li>
+                        <li><a href="https://www.instagram.com/kemenag_pesisir_selatan"><i
+                                    class="ion-social-instagram-outline"></i></a></li>
                     </ul>
                 </div>
 

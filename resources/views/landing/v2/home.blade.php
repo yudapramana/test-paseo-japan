@@ -483,19 +483,21 @@
                     <tbody>
                         <tr>
                             <td>
-                                <a style="color:#000000;" href="https://www.facebook.com/KementerianAgamaRI"><img
-                                        src="https://ppid.kemenag.go.id/v4/images/fb.png" width="20px"> Kementerian
-                                    Agama RI</a> 
-                                <a style="color:#000000;" href="https://twitter.com/Kemenag_RI"><img
+                                <a style="color:#000000;" href="https://www.facebook.com/kemenagpessel.painan"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/fb.png" width="20px"> Kemenag
+                                    Pessel</a> 
+                                {{-- <a style="color:#000000;" href="https://twitter.com/Kemenag_RI"><img
                                         src="https://ppid.kemenag.go.id/v4/images/twitter.png"
-                                        width="20px"> @Kemenag_RI</a> 
-                                <a style="color:#000000;" href="https://www.instagram.com/kemenag_ri/"><img
-                                        src="https://ppid.kemenag.go.id/v4/images/ig.png" width="20px"> @kemenag_ri</a> 
-                                <a style="color:#000000;" href="https://ppid.kemenag.go.id/v4/images/yt.png"><img
-                                        src="https://ppid.kemenag.go.id/v4/images/yt.png" width="20px"> Kemenag RI</a> 
-                                <a style="color:#000000;" href="https://www.tiktok.com/@kemenag_ri"><img
+                                        width="20px"> @Kemenag_RI</a>  --}}
+                                <a style="color:#000000;" href="https://www.instagram.com/kemenag_pesisir_selatan/"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/ig.png"
+                                        width="20px"> @kemenag_pesisir_selatan</a> 
+                                <a style="color:#000000;" href="https://youtube.com/@kantorkemenagpessel2940"><img
+                                        src="https://ppid.kemenag.go.id/v4/images/yt.png" width="20px"> Kemenag
+                                    Pessel</a> 
+                                <a style="color:#000000;" href="https://www.tiktok.com/@kemenagpessel"><img
                                         src="https://ppid.kemenag.go.id/v4/images/tiktok.png"
-                                        width="20px"> @kemenag_ri</a> 
+                                        width="20px"> @kemenagpessel</a> 
                             </td>
                         </tr>
                     </tbody>
