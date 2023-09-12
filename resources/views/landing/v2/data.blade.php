@@ -68,7 +68,7 @@
                             </ul>
 
                             @if($dataFile->akses == 'public')
-                            <a href="/data/download/{{ $dataFile->id_data_file_encrypt }}"
+                            <a href="{{config('isec.base_url')}}/data/download/{{ $dataFile->id_data_file_encrypt }}"
                                 class="btn btn-xs btn-primary">
                                 Download
                             </a>
@@ -189,7 +189,7 @@
                                             <div class="card-body">
 
                                                 @if($dataFile->akses == 'public')
-                                                <a href="/data/download/{{ $dataFile->id_data_file_encrypt }}"
+                                                <a href="{{config('isec.base_url')}}/data/download/{{ $dataFile->id_data_file_encrypt }}"
                                                     class="btn btn-xs btn-primary">
                                                     Download
                                                 </a>
