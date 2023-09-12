@@ -68,7 +68,8 @@
                         <li>
                             <div class="post_footer">
                                 <div class="post_content">
-                                    <h6><a href="/info/informasi_serta_merta">Informasi Serta
+                                    <h6><a href="{{config('isec.base_url')}}/info/informasi_serta_merta">Informasi
+                                            Serta
                                             Merta</a></h6>
                                 </div>
                             </div>
@@ -77,7 +78,8 @@
                         <li>
                             <div class="post_footer">
                                 <div class="post_content">
-                                    <h6><a href="/info/informasi_setiap_saat">Informasi Tersedia
+                                    <h6><a href="{{config('isec.base_url')}}/info/informasi_setiap_saat">Informasi
+                                            Tersedia
                                             Setiap Saat</a></h6>
                                 </div>
                             </div>
@@ -86,7 +88,7 @@
                         <li>
                             <div class="post_footer">
                                 <div class="post_content">
-                                    <h6><a href="/info/informasi_berkala">Informasi
+                                    <h6><a href="{{config('isec.base_url')}}/info/informasi_berkala">Informasi
                                             Berkala</a></h6>
                                 </div>
                             </div>
@@ -95,7 +97,8 @@
                         <li>
                             <div class="post_footer">
                                 <div class="post_content">
-                                    <h6><a href="/info/informasi_dikecualikan">Informasi yang Dikecualikan</a></h6>
+                                    <h6><a href="{{config('isec.base_url')}}/info/informasi_dikecualikan">Informasi
+                                            yang Dikecualikan</a></h6>
                                 </div>
                             </div>
                         </li>
