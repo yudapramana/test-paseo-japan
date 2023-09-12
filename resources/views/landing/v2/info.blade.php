@@ -225,7 +225,7 @@
                     var html = '';
 
                     var numberinc = data.from
-                    var base_url = {{config('isec.base_url')}};
+                    var base_url = '{{ config("isec.base_url") }}';
                     $.each(data.data, function(index, item) {
                         html += `
                     <tr>
