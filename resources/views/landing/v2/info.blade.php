@@ -225,12 +225,13 @@
                     var html = '';
 
                     var numberinc = data.from
+                    var base_url = {{config('isec.base_url')}};
                     $.each(data.data, function(index, item) {
                         html += `
                     <tr>
                         <td class="text-center">${numberinc}</td>
                         <td style="font-size:medium;">
-                            <a href="/data/detail/${item.id_data_file_encrypt}">
+                            <a href="${base_url}/data/detail/${item.id_data_file_encrypt}">
                             ${item.keterangan}
                             </a>    
                         </td>
