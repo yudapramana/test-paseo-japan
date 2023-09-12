@@ -73,7 +73,7 @@
 
                         @if(count($menuitem->children[0]) == 0)
                         <li><a class="nav-link @if (request()->segment(1) == '') @endif " target="{{$menuitem->target}}"
-                                href="@if($menuitem->target == '_self') {{'/'.$menuitem->slug}} @else {{$menuitem->slug}} @endif">{{$menuitem->title}}</a>
+                                href="@if($menuitem->target == '_self') {{ config('isec.base_url') . '/'.$menuitem->slug}} @else {{$menuitem->slug}} @endif">{{$menuitem->title}}</a>
                         </li>
                         @else
 
@@ -87,12 +87,12 @@
                                     @if(count($menuitem2->children[0]) == 0)
                                     <li>
                                         <a class="dropdown-item nav-link nav_item" target="{{$menuitem2->target}}"
-                                            href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
+                                            href="@if($menuitem2->target == '_self') {{ config('isec.base_url') .  '/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
                                     </li>
                                     @else
                                     <li>
                                         <a class=" dropdown-item menu-link dropdown-toggler"
-                                            href="@if($menuitem2->target == '_self') {{'/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
+                                            href="@if($menuitem2->target == '_self') {{ config('isec.base_url') .  '/'.$menuitem2->slug}} @else {{$menuitem2->slug}} @endif">{{$menuitem2->title}}</a>
 
 
                                         <div class="dropdown-menu">
@@ -100,7 +100,7 @@
                                                 @foreach($menuitem2->children[0] as $k2 => $menuitem3)
                                                 <li><a class="dropdown-item nav-link nav_item"
                                                         target="{{$menuitem3->target}}"
-                                                        href="@if($menuitem3->target == '_self') {{'/'.$menuitem3->slug}} @else {{$menuitem3->slug}} @endif">{{$menuitem3->title}}</a>
+                                                        href="@if($menuitem3->target == '_self') {{ config('isec.base_url') .  '/'.$menuitem3->slug}} @else {{$menuitem3->slug}} @endif">{{$menuitem3->title}}</a>
                                                 </li>
                                                 @endforeach
                                             </ul>
