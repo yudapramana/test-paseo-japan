@@ -19,7 +19,8 @@
                     <a href="/register"
                         class="btn btn-outline-white btn-sm float-right d-sm-block d-none">Registrasi</a>
                     <div class="lng_dropdown lng_dropdown_white float-right mr-sm-3">
-                        <a href="/login" class="btn btn-outline-white btn-sm float-right d-sm-block d-none">login</a>
+                        <a href="{{ route('login') }}"
+                            class="btn btn-outline-white btn-sm float-right d-sm-block d-none">login</a>
                     </div>
                 </div>
             </div>
