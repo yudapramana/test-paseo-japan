@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="{{$keterangan}}" />
 <meta name="twitter:title" content="{{$keterangan}}" />
-<meta name="twitter:description" content="PPID - {{$keterangan}">
+<meta name="twitter:description" content="PPID - {{$keterangan}}">
 <meta name="twitter:image" content="{{ asset('sailor/img/logo.png') }}" />
 <meta property="twitter:url" content="{{ URL::current() }}">
 
