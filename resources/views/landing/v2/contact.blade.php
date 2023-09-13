@@ -39,6 +39,17 @@
 
 <hr class="pt-0 mt-0">
 
+<section class="p-0 m-0">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12 pt-5 pb-3 wow fadeInLeft animated">
+                <h4 class="greenext"> Kritik & Saran melalui Formulir dibawah</h4>
+            </div>
+        </div>
+    </div>
+
+</section>
 <!-- START SECTION CONTACT -->
 
 <section id="contact" class="contact">
