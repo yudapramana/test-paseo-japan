@@ -71,6 +71,11 @@
                                             style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                             data-target="#myModal">Daftarkan Permohonan
                                             Informasi</a>
+                                        <a class="btn btn-warning animation animated fadeInUp"
+                                            href="{{config('isec.base_url') }}/sect/keberatan_informasi"
+                                            data-animation="fadeInUp" data-animation-delay="1.8s"
+                                            style="animation-delay: 1.8s; opacity: 1;" data-scroll>Ajukan Keberatan
+                                        </a>
                                     </p>
                                     <a class="btn btn-outline-white animation animated fadeInUp" href="#"
                                         data-animation="fadeInUp" data-animation-delay="1.8s"

@@ -57,7 +57,7 @@
         <div class="row py-0 my-0">
             <div class="col-sm-12 py-0 my-0 wow fadeInLeft animated">
 
-                <h3 class="greenext">Permohonan Informasi</h3>
+                <h3 class="greenext">Keberatan Atas Informasi</h3>
 
 
             </div>
@@ -69,137 +69,25 @@
     <section class="py-0 my-0">
 
         {{-- <form action="{{ route('permohonan.store') }}"> --}}
-            <form class="needs-validation" method="post" id="permohonanForm" action={{ route('permohonan.store') }}
+            <form class="needs-validation" method="post" id="permohonanForm" action={{ route('keberatan.store') }}
                 role="form">
                 {{ csrf_field() }}
                 <hr class="styledhr">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <legend class="font-weight-bold">Identitas Pemohon</legend>
+                        <legend class="font-weight-bold">Formulir Ajuan Keberatan</legend>
 
                         <div class="form-group">
-                            <label for="jenis_pemohon">Jenis Pemohon</label>
-                            <select class="form-control" id="jenis_pemohon" name="jenis_pemohon">
-                                <option value="">Pilih</option>
-                                <option value="pribadi">Pribadi</option>
-                                <option value="kelompok">Kelompok</option>
-                                <option value="badan hukum">Badan Hukum</option>
-                            </select>
+                            <label for="nomor_permohonan">Nomor Permohonan Informasi</label>
+                            <input type="text" class="form-control" id="nomor_permohonan" name="nomor_permohonan"
+                                aria-describedby="nomor_permohonan" placeholder="Nomor Permohonan Informasi">
+
                         </div>
 
                         <div class="form-group">
-                            <label for="jenis_identitas">Jenis Identitas</label>
-                            <select class="form-control" id="jenis_identitas" name="jenis_identitas">
-                                <option value="">Pilih</option>
-                                <option value="ktp">KTP</option>
-                                <option value="surat kuasa">Surat Kuasa</option>
-                                <option value="badan hukum">Badan Hukum</option>
-                                <option value="instansi">Instansi</option>
-
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nomor_identitas">Nomor Identitas / Nama Instansi</label>
-                            <input type="text" class="form-control" id="nomor_identitas" name="nomor_identitas"
-                                aria-describedby="nomor_identitas" placeholder="Nomor Identitas / Nama Instansi">
-                            {{-- <small id="nomor_identitas" class="form-text text-muted">Kami tidak akan pernah
-                                membagikan Identitas Anda kepada orang lain.</small> --}}
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nama_pemohon">Nama Pemohon</label>
-                            <input type="text" class="form-control" id="nama_pemohon" name="nama_pemohon"
-                                aria-describedby="nama_pemohon" placeholder="Nama Pemohon">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Pemohon</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="email"
-                                placeholder="Email Pemohon">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="no_telp">Nomor Telpon</label>
-                            <input type="text" class="form-control" id="no_telp" name="no_telp"
-                                aria-describedby="no_telp" placeholder="Nomor Telepon Pemohon">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="alamat">Alamat Pemohon</label>
-                            <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="pekerjaan">Pekerjaan</label>
-                            <input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
-                                aria-describedby="pekerjaan" placeholder="Pekerjaan Pemohon">
-                        </div>
-
-
-                        <label for="pekerjaan">Upload Identitas</label>
-                        <div class="form-group">
-                            <div id="foto-produk-box" class="product-img" style="display: none">
-                                <img class="img-fluid" id="foto-produk-src" src="" alt="" width="200">
-                            </div>
-                            <button id="upload_widget_opener" type="button" class="btn btn-primary">Upload</button>
-                            <br>
-                            <input type="hidden" id="identity_url" name="identity_url" required>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <legend class="font-weight-bold">Rincian Permohonan</legend>
-
-                        <div class="form-group">
-                            <label for="rincian_informasi">Rincian Informasi</label>
-                            <textarea class="form-control" name="rincian_informasi" id="rincian_informasi"
-                                rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="tujuan_penggunaan_informasi">Tujuan Penggunaan Informasi</label>
-                            <textarea class="form-control" name="tujuan_penggunaan_informasi"
-                                id="tujuan_penggunaan_informasi" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cara_pemakaian_informasi">Cara Pemakaian Informasi</label>
-                            <select class="form-control" id="cara_pemakaian_informasi" name="cara_pemakaian_informasi">
-                                <option value="">Pilih</option>
-                                <option value="pribadi">Pribadi</option>
-                                <option value="bekerja">Bekerja</option>
-                                <option value="lainnya">Lainnya</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cara_memperoleh_informasi">Cara Memperoleh Informasi</label>
-                            <select class="form-control" id="cara_memperoleh_informasi"
-                                name="cara_memperoleh_informasi">
-                                <option value="">Pilih</option>
-                                <option value="tradisional">Melihat / Mendengar / Membaca / Mencatat</option>
-                                <option value="elektronik">Mendapatkan salinan informasi secara Elektronik</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bentuk_informasi">Bentuk Informasi</label>
-                            <select class="form-control" id="bentuk_informasi" name="bentuk_informasi">
-                                <option value="">Pilih</option>
-                                <option value="softcopy">Softcopy</option>
-                                <option value="hardcopy">Hardcopy</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cara_mendapatkan_salinan">Cara Mendapatkan Salinan</label>
-                            <select class="form-control" id="cara_mendapatkan_salinan" name="cara_mendapatkan_salinan">
-                                <option value="">Pilih</option>
-                                <option value="mengambil langsung">Mengambil Langsung</option>
-                                <option value="faksimili">Faksimili</option>
-                                <option value="email">Email</option>
-                            </select>
+                            <label for="alasan_keberatan">Alasan Keberatan</label>
+                            <textarea class="form-control" name="alasan_keberatan" id="alasan_keberatan"
+                                rows="5"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -217,13 +105,119 @@
                                 name="captcha">
                         </div>
 
+                        <hr class="styledhr">
+                        <div class="form-group pb-5">
+                            <button type="button" id="savePermohonanBtn" class="btn btn-primary float-right">Ajukan
+                                Permohonan</button>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        {{-- <legend class="font-weight-bold">Persyaratan Keberatan Informasi</legend> --}}
+
+                        <div class="p-l-10 p-rl-0-sr991 pb-3">
+                            <p class="font-weight-bold" style="font-size:large;">Persyaratan Keberatan Permohonan
+                                Informasi Publik
+                            </p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">Pemohon informasi publik dapat mengajukan keberatan secara
+                                            tertulis kepada Atasan PPID paling lambat 30 (tiga puluh) hari kerja setelah
+                                            ditemukannya alasan sebagai berikut:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>.</td>
+                                        <td> Penolakan atas permohonan informasi publik;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>.</td>
+                                        <td> tidak disediakannya informasi berkala;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>.</td>
+                                        <td> tidak ditanggapinya permohonan informasi publik;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>.</td>
+                                        <td> permohonan informasi publik ditanggapi tidak sebagaimana yang diminta;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>.</td>
+                                        <td> tidak dipenuhinya permohonan informasi publik;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>.</td>
+                                        <td> pengenaan biaya yang tidak wajar;</td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">7</td>
+                                        <td valign="top">.</td>
+                                        <td> dan/atau penyampaian informasi publik yang melebihi waktu yang diatur dalam
+                                            peraturan perundang-undangan.</td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" align="justify">Dalam hal pengajuan keberatan disampaikan secara
+                                            tidak tertulis, Tim Sekretariat PPID mengarahkan Pemohon Informasi Publik
+                                            yang mengajukan keberatan atau pihak penerima kuasa untuk mengisi formulir
+                                            keberatan sesuai format. Dalam mengajukan keberatan, pemohon wajib
+                                            menyertakan identitas pemohon yang sah sebagaimana syarat dalam permohonan
+                                            informasi.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" align="justify">Pemohon Keberatan harus menyertakan dokumen
+                                            sebagai berikut:</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>.</td>
+                                        <td>Surat tanggapan/jawaban permohonan informasi dari PPID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>.</td>
+                                        <td>Formulir tanda terima permohonan informasi</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div style="margin-bottom:20px;"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3">Tim Sekretariat PPID wajib memberikan salinan formulir keberatan
+                                            disertai nomor registrasi keberatan kepada Pemohon Informasi Publik yang
+                                            mengajukan keberatan atau kuasanya sebagai tanda terima pengajuan keberatan.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
                     </div>
                 </div>
-                <hr class="styledhr">
-                <div class="form-group pb-5">
-                    <button type="button" id="savePermohonanBtn" class="btn btn-primary float-right">Ajukan
-                        Permohonan</button>
-                </div>
+
 
             </form>
 
@@ -246,39 +240,7 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
 <script>
-    // Cloudinary Widget
-        var myWidget = cloudinary.createUploadWidget({
-            cloudName: 'kominfo-sb',
-            uploadPreset: 'zwco5rur',
-            theme: 'minimal',
-            multiple: false,
-            max_file_size: 10048576,
-            background: "white",
-            height: 600,
-            width: 400,
-            crop: "pad"
-
-        }, (error, result) => {
-            if (!error && result && result.event === "success") {
-                console.log('Done! Here is the image info: ', result.info);
-                var secure_url = result.info.secure_url;
-                console.log('secure_url');
-                console.log(secure_url);
-                $('input[name=identity_url]').val(secure_url);
-                $('#foto-produk-box').css("display", "block");
-                $('#upload_widget_opener').css("display", "none");
-                $('#tu-upload-box').hide();
-                $('#foto-produk-src').attr("src", secure_url);
-                // $('#foto-produk-url').attr("href", secure_url);
-                $("#defModal").css('overflow-y', 'auto');
-            }
-        });
-
-        document.getElementById("upload_widget_opener").addEventListener("click", function() {
-            myWidget.open();
-        }, false);
-
-        $('#reload').click(function() {
+    $('#reload').click(function() {
             reloadCaptcha();
         });
 
@@ -325,7 +287,7 @@
                         if (data.success) {
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Permohonan berhasil disimpan dengan nomor tiket: #' + data.nomor_tiket,
+                                title: 'Keberatan Informasi berhasil disimpan dengan nomor tiket: #' + data.nomor_tiket,
                                 confirmButtonText: "OK",
                                 allowOutsideClick: false
                                     // , timer: 1000

@@ -30,6 +30,9 @@ Route::post('permohonan/switch', [App\Http\Controllers\PermohonanController::cla
 Route::get('sect/permohonan_informasi', [App\Http\Controllers\SectController::class, 'permohonan'])->name('sect.permohonan');
 Route::post('sect/permohonan/store', [App\Http\Controllers\SectController::class, 'storePermohonan'])->name('permohonan.store');
 
+Route::get('sect/keberatan_informasi', [App\Http\Controllers\SectController::class, 'keberatan'])->name('sect.keberatan');
+Route::post('sect/keberatan/store', [App\Http\Controllers\SectController::class, 'storeKeberatan'])->name('keberatan.store');
+
 Route::post('/captcha-validation', [\App\Http\Controllers\CaptchaServiceController::class, 'capthcaFormValidate']);
 Route::get('/reload-captcha', [\App\Http\Controllers\CaptchaServiceController::class, 'reloadCaptcha'])->name('reload.captcha');
 
