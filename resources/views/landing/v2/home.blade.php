@@ -59,9 +59,9 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-6 col-md-12 col-sm-12 text-right">
                                 <div class="banner_content2 text_white">
-                                    <h3 class="animation animated fadeInDown" data-animation="fadeInDown"
+                                    <h2 class="animation animated fadeInDown" data-animation="fadeInDown"
                                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">PORTAL PPID
-                                        KEMENAG PESISIR SELATAN</h3>
+                                        KEMENAG PESISIR SELATAN</h2>
                                     {{-- <p class="animation my-4 animated fadeInUp" data-animation="fadeInUp"
                                         data-animation-delay="1.5s" style="animation-delay: 1.5s; opacity: 1;">Ipsum
                                         generators on the Internet tend to repeat predefined</p> --}}
@@ -82,9 +82,12 @@
                                         style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                         data-target="#surveiModal">Survey Kepuasan Masyarakat</a>
                                     <br>
+                                    <p>
+                                        <br>
                                     <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
                                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
                                         $carousel->title }}</h4>
+                                    </p>
                                 </div>
                             </div>
                         </div>
