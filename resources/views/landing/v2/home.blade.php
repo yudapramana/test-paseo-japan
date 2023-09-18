@@ -59,9 +59,9 @@
                         <div class="row justify-content-end">
                             <div class="col-lg-6 col-md-12 col-sm-12 text-right">
                                 <div class="banner_content2 text_white">
-                                    <h5 class="animation animated fadeInDown" data-animation="fadeInDown"
-                                        data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
-                                        $carousel->title }}</h5>
+                                    <h3 class="animation animated fadeInDown" data-animation="fadeInDown"
+                                        data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">PORTAL PPID
+                                        KEMENAG PESISIR SELATAN</h3>
                                     {{-- <p class="animation my-4 animated fadeInUp" data-animation="fadeInUp"
                                         data-animation-delay="1.5s" style="animation-delay: 1.5s; opacity: 1;">Ipsum
                                         generators on the Internet tend to repeat predefined</p> --}}
@@ -71,7 +71,7 @@
                                             style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                             data-target="#myModal">Daftarkan Permohonan
                                             Informasi</a>
-                                        <a class="btn btn-warning animation animated fadeInUp"
+                                        <a class="btn btn-primary animation animated fadeInUp"
                                             href="{{config('isec.base_url') }}/sect/keberatan_informasi"
                                             data-animation="fadeInUp" data-animation-delay="1.8s"
                                             style="animation-delay: 1.8s; opacity: 1;" data-scroll>Ajukan Keberatan
@@ -81,6 +81,10 @@
                                         data-animation="fadeInUp" data-animation-delay="1.8s"
                                         style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                         data-target="#surveiModal">Survey Kepuasan Masyarakat</a>
+                                    <br>
+                                    <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
+                                        data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
+                                        $carousel->title }}</h4>
                                 </div>
                             </div>
                         </div>
