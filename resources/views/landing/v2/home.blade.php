@@ -90,7 +90,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 col-md-12 col-sm-12 text-right">
+                            <div class="col-lg-12 col-md-12 col-sm-12 text-right">
                                 <div class="banner_content2 text_white">
                                     <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
                                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
