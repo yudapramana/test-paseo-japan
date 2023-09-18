@@ -35,8 +35,12 @@
     .btn-primary {
         border-color: #00C382 !important;
         background-color: #00C382 !important;
+        padding: 10px 30px !important;
     }
 
+    .btn-warning {
+        padding: 10px 30px !important;
+    }
 
 
     section {
