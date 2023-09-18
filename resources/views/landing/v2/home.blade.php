@@ -97,9 +97,9 @@
                                 <div class="banner_content2 text_white">
                                     <p>
                                         <br>
-                                    <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
+                                    <h5 class="animation animated fadeInDown" data-animation="fadeInDown"
                                         data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
-                                        $carousel->title }}</h4>
+                                        $carousel->title }}</h5>
                                     </p>
                                 </div>
                             </div>
