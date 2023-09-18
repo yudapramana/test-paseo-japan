@@ -32,6 +32,11 @@
         letter-spacing: 1px;
     }
 
+    .btn-primary {
+        border-color: #00C382 !important;
+        background-color: #00C382 !important;
+    }
+
 
 
     section {
@@ -66,12 +71,12 @@
                                         data-animation-delay="1.5s" style="animation-delay: 1.5s; opacity: 1;">Ipsum
                                         generators on the Internet tend to repeat predefined</p> --}}
                                     <p>
-                                        <a class="btn btn-default animation animated fadeInUp" href="#"
+                                        <a class="btn btn-primary animation animated fadeInUp" href="#"
                                             data-animation="fadeInUp" data-animation-delay="1.8s"
                                             style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                             data-target="#myModal">Daftarkan Permohonan
                                             Informasi</a>
-                                        <a class="btn btn-primary animation animated fadeInUp"
+                                        <a class="btn btn-warning animation animated fadeInUp"
                                             href="{{config('isec.base_url') }}/sect/keberatan_informasi"
                                             data-animation="fadeInUp" data-animation-delay="1.8s"
                                             style="animation-delay: 1.8s; opacity: 1;" data-scroll>Ajukan Keberatan
@@ -82,13 +87,14 @@
                                         style="animation-delay: 1.8s; opacity: 1;" data-scroll data-toggle="modal"
                                         data-target="#surveiModal">Survey Kepuasan Masyarakat</a>
                                     <br>
-                                    <p>
-                                        <br>
-                                    <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
-                                        data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
-                                        $carousel->title }}</h4>
-                                    </p>
+
                                 </div>
+                                <p>
+                                    <br>
+                                <h4 class="animation animated fadeInDown" data-animation="fadeInDown"
+                                    data-animation-delay="1s" style="animation-delay: 1s; opacity: 1;">{{
+                                    $carousel->title }}</h4>
+                                </p>
                             </div>
                         </div>
 
