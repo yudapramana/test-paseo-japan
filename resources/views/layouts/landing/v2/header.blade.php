@@ -16,12 +16,29 @@
                 </div>
 
                 <div class="col-md-8 col-sm-7 col-4">
-                    <a href="/register"
-                        class="btn btn-outline-white btn-sm float-right d-sm-block d-none">Registrasi</a>
+                    {{-- <a href="/register"
+                        class="btn btn-outline-white btn-sm float-right d-sm-block d-none">Registrasi</a> --}}
+
+
                     <div class="lng_dropdown lng_dropdown_white float-right mr-sm-3">
                         <a href="{{ route('login') }}"
                             class="btn btn-outline-white btn-sm float-right d-sm-block d-none">login</a>
                     </div>
+
+                    <div class="lng_dropdown lng_dropdown_white float-right mr-sm-3" style="vertical-align: middle;">
+                        <a style="vertical-align: middle;" class="text-white" href="#!"
+                            onclick="javascript:toggleFullScreen()" data-bs-original-title="" title=""><svg
+                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-maximize">
+                                <path
+                                    d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3">
+                                </path>
+                            </svg></a>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
